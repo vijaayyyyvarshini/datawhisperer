@@ -116,6 +116,7 @@ graphql-relay==3.2.0
 greenlet @ file:///opt/concourse/worker/volumes/live/b27b4e9e-4697-4d57-403b-f82d36a391ca/volume/greenlet_1628888146890/work
 grpcio==1.47.5
 grpcio-health-checking==1.47.5
+gunicorn==21.2.0
 h11==0.14.0
 h5py @ file:///opt/concourse/worker/volumes/live/6c9dfd5c-4d68-462d-7e1b-a36d4aa040f7/volume/h5py_1637138906246/work
 HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
