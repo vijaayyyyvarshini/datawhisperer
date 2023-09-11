@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "We now accept the fact that learning is a lifelong process of keeping abreast of change. And the most pressing task is to teach people how to learn."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Peter Drucker
+            </p>
+        </blockquote>
+
+       
+        <p>I am going to start with a curious mind. Hence, the question? How long did it take to solve the rubrics cube when we were smaller? Maybe, a month?
+        6 months? 1 year? Well, all of this depends on the practice and how curious you are enough to solve it quickly. 
+        If you are not really faster into learning how to solve it, then you might take your own time with it and solve it only when you wish to.
+        But, if you are really into learning how to solve them, the you might just a few weeks and you will get it done somehow!!
+        </p>
+
+        <p>My cousin recently learned how to solve it within weeks, by referring to books and watching youtube videos for the hints and tricks. However, I remember I took sometime to solve it, as I was not really into it.</p>
+
+        <div class="image" >
+            <img src="/static/images/rubrik.jpeg" alt="Trulli" width="400" height="350">
+        </div>
+
+        <p> However, playing with puzzles in grade 4 helped me to enjoy it. I used to sit for hours, thinking and joining all the puzzle pieces together. They gave me a new definition for curiosity. 
+            That is when I realised rubrik cubes can also be solved if you solve in the way you can. This allowed me to understand all problems have solutions. 
+            My interest in maths also ascended. I went from an average student to an A student in maths. 
+            I practiced more and enjoyed all the problems. It made me feel like I was getting out from a maze. 
+            Then, I was introduced to the concepts of programming and my imagination went wild. I loved using programming as a coping mechanism to solve problems.
+       </p>
+
+       <p>
+        My first step in practicing and solving problems was using Hacker Rank. It was the instagram for me. I spent hours and hours in it, trying to solve different types of questions.
+        I used to fail in most of them but then as I kept encountering more problems, it did work out for me. I would say, consistency is the key. Just because you cannot do it initially, does not mean you wont be able to do at all.
+       </p>
+       <p>
+        Recently, I was in my Data Engineering class and my professor asked us to solve a puzzle. It was just a simple puzzle that required some logical skills. However, me being me, I wanted to make use of algorithms in it. 
+        I came up with a solution to solve the question. 
+        </p>
+       <p>The question is, "How to cut a cake into 16 equal halves with just 5 cuts?"</p> 
+
+       <p>This is the solution I came up with - </p>
+
+       <p>
+        <p>Step 1: Cut the cake vertically in two halves.</p>
+       <p>Step 2: Cut the cake horizontally that will create 2 equal layers.</p>
+        <p>Step 3: Rotate the cake, and cut down vertically to the center of the cake. This will create four
+            equal quarters.</p>
+        <p>Step 4: Rotate the cake again, and now cut it horizontally across the top of the cake. This will
+            create eight equal eighths.</p>
+        <p>Step 5: Finally, make a vertical cut down the center of each eighth. This will create 16 equal
+            pieces.</p>
+
+        <p>
+            <div class="image1" >
+                <img src="/static/images/cake_puzzle.png" alt="Trulli">
+            </div>
+        </p>
+
+        <p>Therefore, the moral of today's learning is: Be consistent in what you do, and you will see the results definitely.</p>
+    </body>
+
+{% endblock %} 

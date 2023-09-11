@@ -1,0 +1,104 @@
+h1 {
+    border: 2px #eee solid;
+    color: purple;
+    text-align: center;
+    padding: 10px;
+    background-color: pink;
+    margin-top: 40px;
+}
+
+.blockquote{
+    max-width: 600px; 
+    margin: 10px 30px; 
+    margin-left: 280px;
+    height: auto;
+    background: #f8fffe; 
+    border: 1px solid #b0d2cb; 
+    color: #0b4237;
+    box-sizing: border-box;
+}
+
+.blockquote--bordered{
+    border-left-width: 10px;
+
+}
+.blockquote_text{
+    font-family: sans-serif;
+    font-size: 1.15em;
+    font-style: italic;
+    line-height: 1.5;
+    margin: auto;
+}
+
+.blockquote_text:not(:last-child)
+{
+    margin-bottom: 1em;
+}
+
+.blockquote_text_author{
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+    margin-right: 10px;
+}
+.blockquote_text_author::before{
+    content: "\2014\0020";
+}
+
+h2{
+    
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.00em;
+    line-height: 1.5;
+    text-align: center;
+
+}
+
+.moreintro{
+    margin-bottom: 25px;
+}
+
+.quote{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.whoamI{
+    width: 300px;
+    margin-top: 25px;
+}
+
+.intro{
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.image{
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.image1{
+    max-width: 65%;
+    height: auto;
+}
+
+.text{
+    margin-top: 20px;
+    border: 2px #eee solid;
+    color: purple;
+    text-align: center;
+    padding: 10px;
+    background-color: pink;
+}
+
+.form-group{
+    padding-left : 10px;
+    padding-right: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
