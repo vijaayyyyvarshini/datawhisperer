@@ -78,12 +78,16 @@ h2{
 
 .image{
     margin-top: 20px;
-    margin-left: 300px;
+    margin-left: 180px;
 }
 
 .image1{
     max-width: 65%;
     height: auto;
+}
+
+.image2{
+    margin-left: 300px;
 }
 
 .text{
