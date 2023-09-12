@@ -1,1 +1,17 @@
-Hey! Whatsup, How are you doing??? Everything alright??
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer 
+        {% endblock %}</h1>
+
+        <div class="projects" id="projectwritings">
+            <ul class="listofprojects">
+            <li class="nav-item active">
+                    <a class="nav-link" href="/brainstrokeprediction">Brain Stroke Prediction using VGG16 and Inception V3</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/cryptoprediction">Crypto Prediction using XGBoost and LSTM</a>
+            </li>
+            </ul>
+        </div>
+{% endblock %}
