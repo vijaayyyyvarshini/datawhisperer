@@ -102,6 +102,10 @@ def firstpage():
 def secondpage():
     return render_template('secondblog.html')
 
+@app.route('/thirdblog')
+def seconddayoflearning():
+    return render_template('thirdblog.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

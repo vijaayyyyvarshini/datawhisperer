@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <body>
+            <blockquote class="blockquote blockquote--bordered">
+                <p class="blockquote_text">
+                    "Nothing has such a power to broaden the mind as the ability to investigate systematically"
+                </p>
+                <p class="blockquote_text blockquote_text_author">
+                    Marcus Aurelius
+                </p>
+            </blockquote>
+
+        <p>Day 2 - (09/13/2023)</p>
+        <p>
+            <h3>What is a SQL Mesh?</h3>
+        </p>
+
+        <p>
+            I work with data and all of its components everyday, up until recently I came across this concept of SQL Mesh.
+            I have heard of the mesh when I was first watching the Spider Man movie, where they said the spider webs look like a mesh, connected with each other.
+        </p>
+        <p>
+            Even our human brain and the neurons form a mesh structure (all aggregated and mixed up with each other)
+        </p>
+
+        <div class="image" >
+            <img src="/static/images/neuron.webp" alt="Trulli" width="500px" height="400px">
+        </div>
+
+        <p>
+            Data's and queries usually when dealing with large sizes and complex problems tend to be long and contain too much of information.
+            This can be monotonous and difficult for readability, interpretation and computation. This is why this idealogy was incorporated in data's as well now in SQL queries.
+        </p>
+        <p>
+            This also allows the scripts and queries to be automated, allowing users handling large and complex queries to finish a task quickkly and with
+            more efficiency.
+        </p>
+
+        <p>A Simple Query can look like the following - </p>
+
+        <p>To select the employees in a company who are above the age of 30</p>
+
+        <div class="query1">
+        <p>employee_id, employee_name,</p>
+        <p>FROM employee_table,</p>
+        <p>WHERE age > 30</p>
+        </div>
+
+        <p>From the above query, isnt it easy to understand the purpose of the query?</p>
+
+        <p>However, if we have a query and subqueries with lots of Aggregate functions, and Joins, then it's definitely going to be quite hard to read and interpret.</p>
+
+        <p>For Example~</p>
+
+        <div class="image" >
+            <img src="/static/images/longquery.png" alt="Trulli" width="500px" height="500px">
+        </div>
+
+        <p>The given query above definitely has the following:</p>
+        <div class="query1">
+        <p>Aggregate Function - MAX</p>
+        <p>SQL Joins - Full Join</p>
+        </div>
+
+        <p>If we had to use SQL Mesh and make this long and boring query shorter and simpler, we must use METRICS.</p>
+        <p>These METRICS are known as the arbitrary functions that perform aggregations and are called as the semantic layer of the Mesh.</p>
+
+        <p>I am assuming the Query now becomes - </p>
+
+        <div class="query2">
+        <p>SELECT</p>
+        <p>ap,</p>
+        <p>METRIC(avg_monthly_sales),</p>
+        <p>METRIC(product_id),</p>
+        <p>METRIC(product_name),</p>
+        <p>FROM __semantic.__table</p>
+        <p>GROUP BY ap</p>
+        </div>
+
+        <p>Hence, the basic syntax of a METRIC Function is as follows:</p>
+
+        <div class="query2">
+        <p>METRIC (</p>
+       <p>name (name-of-the-metric)</p>
+       <p>owner (name-of-the-owner)</p>
+       <p>expression (formula)</p>
+       <p>);</p>
+        </div>
+
+        <p>where,</p>
+        <p>- The name of the metric is the name given to the function. It is unique.</p>
+        <p>- The owner of the metric is the one who has access to it.</p>
+        <p>- The expression is the SQL expression consisting of a formula.</p>
+
+    </body>
+
+    
+
+{% endblock %} 
