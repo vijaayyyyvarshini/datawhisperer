@@ -115,3 +115,14 @@ h2{
     color: red;
     margin-left: 300px;
 }
+
+.textcolor{
+    color: green;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+  }
+

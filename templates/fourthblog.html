@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Christian D. Larson
+            </p>
+        </blockquote>
+
+        <p>
+            I am a Data Scientist and for a data scientist like me, Pandas and Numpy are like the hearts. Without either of them,
+            any kind of manipulation or analysis can be done in datasets. 
+        </p>
+
+        <div class="textcolor">
+        <p>
+            Pandas is an open-source data manipulation and analysis library for the Python programming language. It provides data structures and functions for efficiently working with structured data, such as tables or spreadsheets, in a way that is easy to use and understand. 
+        </p>
+    </div>
+
+    <p>
+        The most common Pandas functions that I have used in my daily days of working with Python are-
+    </p>
+    <p>- isnull()</p>
+    <p>- info()</p>
+    <p>- describe()</p>
+    <p>- fillna()</p>
+    <p>- pd_read()</p>
+    <p>- drop()</p>
+
+    <p>All of these functions perform certain unique tasks in the data pre processing stage.</p>
+    <p>With Pandas 2.0, we are now able to perform advanced functions that are more efficient and better than the ones existing!</p>
+
+    <p><h3>Speed Rate, Performance Efficiency and Memory Usage</h3></p>
+    <p>Since Pandas was built on top of Numpy, memory storage for large datasets were always a limitation. With Pandas 2.0, we have the Apache Arrow introduced to the environment.
+        Now, what is Arrow?
+    </p>
+    <p>Arrow in Apache is the standardized in-memory columnar data format that contains the libraries of languages like C, C++ and Python.</p>
+
+    <p>To make it simpler, with Arrow in action, the used memory space is less with faster computation rate.</p>
+
+    <p>For Example,</p>
+
+    <div class="image" >
+        <img src="/static/images/df.png" alt="Trulli" width="600px" height="auto">
+    </div> 
+
+    <p>
+    <div class="image" >
+        <img src="/static/images/df_arrow.png" alt="Trulli" width="600px" height="auto">
+    </div> 
+    </p>
+
+    <p>
+        The above figures show the comparison between the memory storage for the older versions of Pandas and the memory storage for Pandas 2.0.
+    </p>
+
+    <p>
+        The dataset used is the - Housing Market & Prices. You can download it from the link -<span style="color: blue"> https://www.kaggle.com/datasets/rukenmissonnier/final-house </span>
+    </p>
+
+    <p>We can see that the pyarrow backend is 30X more faster. Other observations are as follows - </p>
+
+    <p>- In the older versions of Pandas, the datatypes are usually different for the attributes. The numeric features are stores as int64 or float64 while the string features are stored as objects.</p>
+    
+    <p>- With Pandas 2.0, all features use the Arrow dtypes.</p>
+
+
+     <p>
+        <div class="image" >
+            <img src="/static/images/datatype.png" alt="Trulli" width="600px" height="auto">
+        </div> 
+
+     </p>
+     <p>
+        <h3>Additional Data Types</h3>
+     </p>
+     <p>With Pandas 2.0, it has given us the facility to use more data types like - dates and times, duration, binary, decimals, lists, and maps.</p>
+        
+     <p>We can also specify their bit version. Default it is 64bit, but now if we want 32bit, then that is also possible.</p>
+
+     <p>For Example,</p>
+     <p>
+        <div class="image" >
+            <img src="/static/images/numpy.png" alt="Trulli" width="600px" height="auto">
+        </div> 
+     </p>
+
+     <p><h3>Easy Handling Missing Values</h3></p>
+     <p>
+        As the old version of Pandas was built on top of Numpy, Pandas was sometimes not able to fill in the missing values flexibly because Numpy did not support null values for some data types.
+     </p>
+     <p>
+        For example, if there was a Null or None value present in the dataset, the integers were automatically converted to  <span style="color: #ff0000"> float.</span>
+     </p>
+     <p>
+        Such an action could cause consequences when dealing with the data as they might form imbalances.
+     </p>
+     <p>For Example, in the figure below, as you can see the <span style="color: #ff0000">"floor"</span> attribute automatically converts its values to float64 from int64 when a None value is found among its datasets.</p>
+    
+     <p>
+        <div class="image" >
+            <img src="/static/images/floor.png" alt="Trulli" width="400px" height="500px">
+        </div>
+     </p>
+
+     <p>But, With Pandas 2.0, leveraging the dtype with <span style="color: purple">'numpy_nullable'</span> allows the data type just stays as it is even if a None value is found.</p>
+    
+     <p>See the example below:</p>
+
+     <p>
+        <div class="image" >
+            <img src="/static/images/floor2.png" alt="Trulli" width="500px" height="500px">
+        </div>
+     </p>
+
+     <p><h3>Copy On-Write Optimization</h3></p>
+
+     <p>Pandas 2.0 has a new addition of a lazy copy mechanism that defers copying DataFrames and Series objects until they are modified. This allows certain methods to return just views rather than the copies when the on-write optimization is enabled, which improves memory space.</p>
+        
+     <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
