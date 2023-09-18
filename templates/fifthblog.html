@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Success is not final, failure is not fatal: It is the courage to continue that counts."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Winston Churchill
+            </p>
+        </blockquote>
+
+        <p>Day 4 - (09/18/2023)</p>
+        <p>
+            I had already mentioned that I am searching for jobs now, which means that I am applying to different types of jobs everyday. These applications seem like a full time job already and it is mentally draining.
+        </p>
+        
+        <p>
+            I realised today that my job application > 200. This is a 6 month hardwork. I started applying long back in Dec 2022 like with seriousness. I spoke with different career coaches, tailored my resume and made sure everything was set!
+        </p>
+        <p>
+            Today, I opened the Excel sheet where I documented the information of all the companies I applied to and the respective
+            roles that I had applied to. This helped me organize my thoughts so that I don't apply to the same job again twice.
+            This also aided me in keeping the record of my progress in these 6 months.
+        </p>
+
+        <p>Looking back, eventhough I felt lazy at times to write them down at that point of time, right now, it is helpful for me. As a data analyst, I had the perspective of analysing the data and maybe display vital trends and patterns in all of my applications.</p>
+    
+        <p>
+            The link to my Excel sheet is - https://docs.google.com/spreadsheets/d/1wU5gJ4H5ocmvz_MGFGTAkUB3dqo1P2-op6GOYc2qYJ4/edit#gid=0
+        </p>
+
+        <p>
+            Interesting insights that I have extracted from my data is:
+        </p>
+        <li>The overall success rate for job applications is 45%, indicating that nearly half of the applications result in a successful outcome.</li>
+        <li> Applications with referrals have a significantly higher success rate of 60% compared to those without referrals, which have a success rate of 40%. Referrals seem to play a crucial role in application success.</li> 
+        <li>Over the past two years (2022 and 2023), there has been an increase in the number of job applications, interviews, and successful applications. However, there's also been a slight increase in rejections.</li>
+        <li>Among the companies applied to, Google, JP Morgan, and CVS Health have the highest success rates, all exceeding 70%.</li>
+        <li>Interviews have a conversion rate of 70% to successful applications, indicating that the majority of interviews lead to job offers.</li>
+        <li>While the overall rejection rate is 30%, it has decreased from 35% in 2022 to 25% in 2023, suggesting an improvement in the job application strategy.</li>
+        <li>Full-time applications have a higher success rate (50%) compared to internships (35%). It seems that full-time positions are more favorable for successful applications.</li>
+        <li>Applications with referrals not only have a higher success rate but also a higher chance of getting an interview, with a conversion rate of 80%.</li>
+        <li>The interview success rate has remained relatively stable between 2022 and 2023, with a slight increase from 65% to 70%.</li>
+
+        <p>The success rate of an application is calculated by the following formula - </p>
+
+        <p><span style="color: red">=(COUNTIF(C2:H2,"Yes") / COUNTA(C2:H2)) * 100</span></p>
+
+        <p>
+
+            Below is a diagram that shows my pivot table (Company, Year and Application Success Rate)
+        </p>
+
+        <div class="image" >
+            <img src="/static/images/Pivottable.png" alt="Trulli" width="500px" height="500px">
+        </div>
+
+        <p>The figure below also explains the visualisation of the Role I applied to Vs Application success rate</p>
+
+        <div class="image" >
+            <img src="/static/images/role.png" alt="Trulli" width="600px" height="500px">
+        </div>
+
+        <p>X- Axis: Roles</p>
+        <p>Y- Axis: Application Success Rate</p>
+
+        <p>This instinct inside me wanted to analyze how well I did in my applications
+            and where I am lacking. From the above analysis, we can easily see that 
+            <span style="color: red;"> rejection > acceptance</span> in my case.
+        </p>
+
+        <p>FYI: I have only included 100 job applications this time. I will analyse for the rest in the upcoming blogs.</p>
+
+        <p>
+            <div class="image" >
+                <img src="/static/images/category.png" alt="Trulli" width="550px" height="500px">
+            </div>
+        </p>
+
+        <p>
+            The above diagram counts the number of successful applications, rejections, and interviews from my data
+            and visualises a bar chart for the count.
+        </p>
+        <p>This eases readability, and interpretation.</p>
+
+        <p>Analyzing a data can be done with any dataset as long as there is a purpose and insight to be derived.
+        </p>
+
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
