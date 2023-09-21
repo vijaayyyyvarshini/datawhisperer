@@ -114,6 +114,10 @@ def thirddayoflearning():
 def fourthdayoflearning():
     return render_template('fifthblog.html')
 
+@app.route('/sixthblog')
+def fifthdayoflearning():
+    return render_template('sixthblog.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
     

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "All our dreams can come true, if we have the courage to pursue them."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Disney
+            </p>
+        </blockquote>
+
+        <p>I am nervous. I am definitely nervous writing today's post. I don't know why but I can feel my anxiety level rise up.
+            It feels I am still new to this concept even if I have been exposed to it for the past 3 years.
+        </p>
+
+        <p>Each and every actionable event requires courage and boldness. As I am sitting here today, mustering up the courage to find a job and supressing my fear of what I am going to do otherwise makes me feel uncomfotable and uneasy.</p>
+
+        <p>When humans undergo emotional distress like this, is it generic for a machine to undergo such obstructions as well?</p>
+
+        <p>Atleast we know the cause and take the steps to fix it. </p>
+        <p>But, can a non-living thing like computers fix their own issue?</p>
+
+        <p>My 2 years of graduate study was filled, dealing with machine learning, data, SQL, and cloud. I have had hands-on experience with basic machine learning models to building complex neural networks.</p>
+        
+        <p>And, for all of this, I needed to muster up the courage.</p>
+        <p>The confidence, when something went wrong.</p>
+        <p>The assurance and belief that I will be able to debug and fix the issue.</p>
+
+        <p>Without me mentally being ready to face what was to come infront of me, I don't think I would have learned and become a forte in what I am doing.(atleast to my level)</p>
+    
+        <p>In today's post, I am going to mention the things I faced when working with such models.</p>
+
+       <p><li><span style="color: red;"> Gathering Data </span>- Gathering high quality data is a must. Sometimes, these data come incomplete, noisy, and biased which might lead to poor model performance.</li></p>
+
+       <p><li><span style="color: red;">Model Selection</span> - Another headache is choosing the right model for the use case. There are numerous algorithms and frameworks available, and selecting the best one requires deep domain knowledge.</li></p>
+    
+       <p><li><span style="color: red;">Overfitting and Underfitting </span>- Balancing the complexity of a model to prevent overfitting (where the model performs well on training data but poorly on unseen data) or underfitting (where the model is too simplistic to capture patterns) is a common challenge.</li></p>
+    
+       <p><li><span style="color: red;">Computation</span> - Training complex models often requires significant computational resources, including high-performance GPUs or TPUs.</li></p>
+       
+       <p><li><span style="color: red;">Ethical Considerations</span> - Machine learning engineers must consider ethical issues related to bias, fairness, and privacy when developing and deploying models. Biased models can perpetuate discrimination, and privacy breaches can lead to legal and reputational issues.</li></p>
+       
+       <p><li><span style="color: red;">Deployment</span> - It is mandatory that the trained model must be deployed properly in order to be accessed by other users or another time.</li></p>
+       
+       <p>That is why, nothing is easy in this world. For every work, in order to obtain the result, you need to put in maximum of effort!!</p>
+       
+       <div class="image" >
+        <img src="/static/images/deeplearning.png" alt="Trulli" width="600px" height="500px">
+    </div>
+    <br>
+    <p>The above is one of the LSTM models that I built for sentiment analysis.</p>
+       
+       
+       
+       <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
