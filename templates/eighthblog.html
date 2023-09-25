@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+      <blockquote class="blockquote blockquote--bordered">
+        <p class="blockquote_text">
+            "It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so."
+        <p class="blockquote_text blockquote_text_author">
+            Mark Twain
+        </p>
+    </blockquote>
+
+    <p>Day 7 - (09/25/2023)</p>
+
+    <p>You are probably wondering what the title of today's blog states. Yes, I am going to be sharing the insights that I derived after analysing my very own LinkedIn Page at 11:40 am.</p>
+
+
+    <p>I have mentioned the time, because the fyp keeps dynamically changing. So, this analysis is for the page that looked like when I refreshed my server at exactly 11:40 am.</p>
+
+    <p>Y'all are probably thinking, is she okay? Is this really necessary?</p>
+
+    <p>If someone asks me this question, I am straight up going to say 'Yes'. As I have already mentioned, you don't have to download some external data and perform analysis on some tables and .csv files. </p>
+
+    <p>The things that are right in front of you are also considered as a type of real-time data.</p>
+
+    <p>For example, my mom who loves cooking tells me that all she needs are some major ingredients, a fire and some vessels to start cooking an innovative dish.</p>
+
+    <p>She implies that you don't have to wait around to get all the vegetables you need and then start cooking. If you just have potato at home, think about turning that potato into something edible. It doesn't have to be fancy all the time. Maybe, a basic mashed potato as a side to pasta is more than enough to make you full for that dinner. </p>
+
+    <p>Similarly, think beyond the box and think about what you can do with the small basic stuff you have with you.</p>
+
+    <p>If you're a student, you can start by analysing:
+      
+    <li>your daily study time</li>
+    <li>the subjects you can cover in one day</li>
+    <li>the time taken to study each of the subject</li>
+    <li>comparison between hard and easy subjects</li>
+    <li>time spent if you're tutoring some other students</li> 
+
+    <p>The list goes on.. It depends on how you are viewing the particular problem.</p>
+    <p>As people say, 'You don't have to find the happiness outside, create it by your own'</p>
+
+    <p>Pardon me, that may not be the correct structure of that phrase, but you get the point right?</p>
+
+    <p>Okay, cutting straight to the chase, the following are the insights derived to my own LinkedIn page - </p>
+
+    <li>The majority of posts in my feed seem to revolve around topics related to professional development, career growth, and networking. This suggests that my LinkedIn network is highly focused on advancing their careers and improving their professional skills.</li>
+    <li>There are posts related to job openings and career opportunities. This implies that members of this network actively seek and share job opportunities, indicating a willingness to help others find employment.</li>
+    <li>Several posts share resources for learning and skill-building, such as Microsoft Certification Roadmaps and resume-building tips. This highlights a commitment to continuous learning and self-improvement.</li>
+    <li>The interactions on these posts, including comments and likes, indicate a strong sense of networking within the community. Users are actively engaging with each other's content and building connections.</li>
+    <li>While the posts are related to career and professional topics, the user profiles and backgrounds may vary widely. This suggests that my LinkedIn network is composed of professionals from diverse industries and backgrounds.</li>
+    <li>Posts mentioning terms like "XR programs," "AI startup," and "data sets" suggest an interest in emerging technologies and trends in various industries.</li>
+    <li>My feed includes promoted content from companies like T-Mobile and Paragon Alpha. Members have a chance to engage with this content, indicating an openness to explore opportunities with these organizations.</li>
+    <li>While not explicitly mentioned, the network appears to have a global reach, as posts mention activities in locations like London. This has a global reach and is not restricted to a locale area.</li>
+    <li>Most of the posts are technology focused - They are related to tools like Python, PowerBI, Tableau, R, and other data related. </li>
+
+    <p>As a job seeker in the data world, this exactly how my LinkedIn page looks (containing all the information related for a person actively seeking opportunities)</p>
+
+    <p>I have also put in these insights as a chart - for better interpretation.</p>
+
+    <p>
+      <div class="graph" >
+           <img src="/static/images/Frequency.png" alt="Trulli" width="600px" height="300px" >
+       </div> 
+   </p>
+
+   <p>The above figure displays the frequency of the different LinkedIn Page Categories.</p>
+
+   <p>
+    <div class="graph" >
+         <img src="/static/images/pie.png" alt="Trulli" width="600px" height="500px" >
+     </div> 
+ </p>
+
+ <p>The above pie chart figure portrays the average percentage of the different types of reactions that has been made in the different types of the posts.</p>
+
+ <p>Let's not forget the fun. I enjoyed generating the word cloud for the fyp page. Here it is below -</p>
+ <p>
+  <div class="wordcloud" >
+       <img src="/static/images/wordcloud.png" alt="Trulli" width="700px" height="400px">
+   </div> 
+</p>
+
+<p>These charts display/give a better understanding or interpretation of what the analysis infers. With a visual interpretation, it is easier to understand and comprehend.</p>
+
+
+    <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
