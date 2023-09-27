@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "You see, when you give your body the best possible fuel, you have more energy. You're stronger, you think more quickly"
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Michell Obama
+            </p>
+        </blockquote>
+
+        <p>Day 8 - (09/26/2023)</p>
+        <p>
+            The first project in my data engineering class was to extract information from complex and nested JSON structures.
+        </p>
+
+        <p>We were given around 3 weeks to come up with the results. But, me with my lazy ass, only looked into it 3 days before. It was indeed my first time dealing with such a problem and hence, I took enough time to come up with the right code for the solution.</p>
+
+        <p><span style="color: green;">Now, What is a JSON structure?</span></p>
+
+        <p><span style="color: palevioletred;"> JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for machines to parse and generate. JSON structures, often referred to as JSON objects or JSON data, are data representations in JSON format. JSON structures consist of key-value pairs, where keys are strings (enclosed in double quotes) and values can be various data types, including strings, numbers, objects, arrays, booleans, null, or other nested JSON structures.</span>
+
+        </p>
+
+        <p>Here's an example of a simple JSON structure:</p>
+        <p>
+            <div class="image" >
+                <img src="/static/images/jsonex.png" alt="Trulli">
+            </div> 
+        </p>
+        <p>In this example:</p>
+        <li><span style="color: red;">"name, "age", and "city" </span>are keys.</li>
+        <li><span style="color: red;">"John", 30, and "New York" </span>are the corresponding values.</li>
+        <li>The entire structure is enclosed within curly braces <span style="color: red;">{}.</span></li>
+        <br>
+       
+    
+       <p>JSON structures can also become more complex by nesting objects and arrays. Here's an example of a nested JSON structure:</p> 
+
+       <p>
+        <div class="image" >
+            <img src="/static/images/complexjson.png" alt="Trulli" width="500px" height="250px">
+        </div> 
+    </p>
+
+    <p>In this nested JSON structure:</p>
+
+    <li><span style="color: red;">"person"</span> and <span style="color: red;">"hobbies"</span> are keys at the top level.</li>
+    <li><span style="color: red;">"person"</span> contains nested key-value pairs, including <span style="color: red;">"name"</span>, <span style="color: red;">"age"</span>, and <span style="color: red;">"address."</span></li>
+    <li><span style="color: red;">"address"</span> is another nested object within the <span style="color: red;">"person"</span> object.</li>
+    <li><span style="color: red;">"hobbies"</span> is an array containing multiple values.</li>
+
+    <br>
+
+    <p>I have in this blog incorporated the basic steps you need to do for extracting the wanted information from the JSON structure.</p>
+
+    <p>Step 1: Import the JSON Library:</p>
+
+    <li>Since I am proficient with python, I am using the JSON library of python </li>
+
+    <p>
+        <div class="complexjson" >
+            <img src="/static/images/import.png" alt="Trulli" width="900px" height="100px">
+        </div> 
+    </p>
+
+   <p>Step 2: Open the JSON File:</p>
+
+   <li>We need to open the JSON file in the editor. To do so, we need to use the open() function and specify the path of the file.</li>
+
+   <p>
+    <div class="complexjson" >
+        <img src="/static/images/openfile.png" alt="Trulli" width="900px" height="100px">
+    </div> 
+</p>
+
+<p>Replace 'your_data.json' with the actual file path to your JSON file.</p>
+
+<p>Step 3: Navigate the Nested Structure:</p>
+
+<li>To access data within nested structures, use a combination of keys or indices to navigate the hierarchy.</li>
+
+<p>
+    <div class="complexjson" >
+        <img src="/static/images/examplejson.png" alt="Trulli" width="900px" height="300px">
+    </div>
+
+<br><p>From the above JSON structure, you can access the data using the code:</p>
+
+<div class="code" span style="color: green;">
+<p>name = data["person"]["name"]</p>
+<p>city = data["person"]["address"]["city"]</p>
+<p>zipcode = data["person"]["address"]["zipcode"]</span></p>
+</div>
+
+<p>Step 4: Handle Missing or Nonexistent Keys (This is an optional step)</p>
+
+<li>Depending on the complexity of your JSON data, you may need to add error handling to check for missing or nonexistent keys to avoid exceptions. You can use try and except blocks for this purpose.</li>
+
+<br><p>JSON is widely used for data exchange between a server and a web application, configuration files, and various other data storage and interchange purposes due to its simplicity and ease of use.</p>
+
+
+
+
+
+
+    <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

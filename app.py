@@ -126,6 +126,10 @@ def sixthdayoflearning():
 def seventhday():
     return render_template('eighthblog.html')
 
+@app.route('/ninethblog')
+def eigthday():
+    return render_template('ninethblog.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
     
