@@ -76,10 +76,17 @@ h2{
     margin-bottom: 25px;
 }
 
-.image{
+/* Base styles for .image container */
+.image-container {
     margin-top: 20px;
-    margin-left: 300px;
+    text-align: center; /* Center the image horizontally */
 }
+
+/* Style for the image inside .image-container */
+.image {
+    max-width: 50%; /* Make the image responsive within its container */
+}
+
 
 .image1{
     max-width: 65%;
@@ -145,3 +152,53 @@ footer {
 .bigram{
     margin-left: 400px;
 }
+
+/*third blog page*/
+/* Styles for screens with a maximum width of 768px (typical for mobile devices) */
+@media only screen and (max-width: 768px) {
+    /* Adjust font size and margins for better mobile readability */
+    .query2 {
+        font-size: 16px;
+        margin: 5px;
+        text-align: center;
+    }
+}
+
+/* Styles for screens with a maximum width of 768px (typical for mobile devices) */
+@media only screen and (max-width: 768px) {
+    /* Adjust font size, margins, and padding for better mobile readability */
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        text-align: center; /* Center-align the heading */
+    }
+
+    .blockquote,
+    .mobile-responsive-text {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .blockquote_text,
+    .blockquote_text_author {
+        text-align: center; /* Center-align the blockquote text and author */
+    }
+
+    footer {
+        text-align: center; /* Center-align the footer text */
+        font-size: 12px; /* Adjust font size in the footer for mobile */
+    }
+
+    /* Additional styles or adjustments for mobile screens go here */
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        margin-left: 10px; /* Adjust the left margin for smaller screens if needed */
+    }
+}
+
+
+
