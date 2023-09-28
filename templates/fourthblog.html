@@ -50,15 +50,13 @@
 
     <p>For Example,</p>
 
-    <div class="image" >
-        <img src="/static/images/df.png" alt="Trulli" width="600px" height="auto">
-    </div> 
+    <div class="image-container">
+        <img src="/static/images/df.png" class="image" alt="dataframe">
+    </div>
 
-    <p>
-    <div class="image" >
-        <img src="/static/images/df_arrow.png" alt="Trulli" width="600px" height="auto">
-    </div> 
-    </p>
+    <div class="image-container">
+        <img src="/static/images/df_arrow.png" class="image" alt="dfArrow">
+    </div>
 
     <p>
         The above figures show the comparison between the memory storage for the older versions of Pandas and the memory storage for Pandas 2.0.
@@ -75,12 +73,10 @@
     <p>- With Pandas 2.0, all features use the Arrow dtypes.</p>
 
 
-     <p>
-        <div class="image" >
-            <img src="/static/images/datatype.png" alt="Trulli" width="600px" height="auto">
-        </div> 
+    <div class="image-container">
+        <img src="/static/images/datatype.png" class="image" alt="DataType">
+    </div>
 
-     </p>
      <p>
         <h3>Additional Data Types</h3>
      </p>
@@ -89,11 +85,10 @@
      <p>We can also specify their bit version. Default it is 64bit, but now if we want 32bit, then that is also possible.</p>
 
      <p>For Example,</p>
-     <p>
-        <div class="image" >
-            <img src="/static/images/numpy.png" alt="Trulli" width="600px" height="auto">
-        </div> 
-     </p>
+
+     <div class="image-container">
+        <img src="/static/images/numpy.png" class="image" alt="Numpy">
+    </div>
 
      <p><h3>Easy Handling Missing Values</h3></p>
      <p>
@@ -107,21 +102,17 @@
      </p>
      <p>For Example, in the figure below, as you can see the <span style="color: #ff0000">"floor"</span> attribute automatically converts its values to float64 from int64 when a None value is found among its datasets.</p>
     
-     <p>
-        <div class="image" >
-            <img src="/static/images/floor.png" alt="Trulli" width="400px" height="500px">
-        </div>
-     </p>
+     <div class="image-container">
+        <img src="/static/images/floor.png" class="image" alt="floor">
+    </div>
 
      <p>But, With Pandas 2.0, leveraging the dtype with <span style="color: purple">'numpy_nullable'</span> allows the data type just stays as it is even if a None value is found.</p>
     
      <p>See the example below:</p>
 
-     <p>
-        <div class="image" >
-            <img src="/static/images/floor2.png" alt="Trulli" width="500px" height="500px">
-        </div>
-     </p>
+     <div class="image-container">
+        <img src="/static/images/floor2.png" class="image" alt="floor2">
+    </div>
 
      <p><h3>Copy On-Write Optimization</h3></p>
 
