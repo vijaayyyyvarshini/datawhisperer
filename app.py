@@ -130,6 +130,10 @@ def seventhday():
 def eigthday():
     return render_template('ninethblog.html')
 
+@app.route('/tenthblog')
+def ninethday():
+    return render_template('tenthblog.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
     

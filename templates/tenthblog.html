@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Reasons reap results"
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Jim Kwik
+            </p>
+        </blockquote>
+
+        <p>Day 9 - (09/27/2023)</p>
+
+        <p>Have you heard of Collocations? Me neither.</p>
+        <p>"what do you mean, you haven't heard of it and yet you are here?"</p>
+        <p>Well, I did not know what collocations were up until I attended my NLP class.</p>
+
+        <p>Today, we had a heavy rain when I was out.</p>
+
+        <p>"Vijay, what are we supposed to do with this information now?"</p>
+
+        <p>uhmm.... *rotates eyes* that is a Collocation guys! Tadaaaa</p>
+
+        <p>"Wait... how is that a collocation?"</p>
+
+        <p>So, Collocations are groups of two or more words that are commonly-used together. In English collocations are largely idiomatic. A collocation is considered “correct” only because its use has been widely-accepted by native English speakers.</p>
+
+
+        <p>When I said <span style="color: red;">"heavy rain"</span>, the word <span style="color: red;">"heavy"</span> and <span style="color: red;">"rain"</span> frequently occur together. They are linked together and it means there is an intense amount of rain. </p>
+
+        <p>You wouldn't find anyone say, <span style="color: red;">"massive rain"</span> or <span style="color: red;">"strong rain"</span> to express this emotion/statement.</p>
+
+        <p>"Oh.. I get it now! So, Vijay, did you <span style="color: red;">seek shelter?"</span></p>
+
+        <p>Oi, you understood well! (I hope you understand now that "seek shelter" is another Collocation example)</p>
+    
+        <p>Manually, it is now easy to identify collocations. Aint it?</p>
+
+        <p>Can a computer identify these collocations?</p>
+
+        <p>It can! Ofcourse. With the help of NLP and its libraries, anything is possible in the text-world.</p>
+    
+        <p>Now, why am I talking about Collocations?</p>
+
+        <p>It's because I related to it and I came across it in my real life. I was assigned with a sentiment analysis task in my NLP classroom by my professor, and during the text preprocessing step, I had to identify these Collocations and avoid it.</p>
+    
+        <p>These words usually occur in terms of <span style="color: red;">BiGrams</span> or <span style="color: red;">Trigrams.</span></p>
+
+        <p>Now, you are wondering, What are BiGrams and TriGrams?</p>
+
+        <p>Maybe, I can talk about that in another blog~ *I dont want to deviate from the topic*</p>
+
+        <p>For now, just understand, BiGrams contain word sets of 2 and TiGrams contain word sets of 3.</p>
+
+        <p>So, how are these collocations different from Bigrams and TiGrams? </p>
+
+        <p>Let's consider the example, "She loved machine learning as much as ice creams"</p>
+
+        <p>BiGrams - <span style="color: red;">["she","loved"],["loved","machine"],["machine","learning"],["learning,as"],["as,much"],["much,as"]</span></p>
+
+        <p>TriGrams - <span style="color: red;">["she","loved","machine"], ["loved","machine","learning"]</span></p>
+
+        <p>Collocations -  <span style="color: red;">["machine learning"] and []"ice creams"]</span></p>
+
+        <p>In NLP, we can identify these Collocations with the help of NLTK library.</p>
+
+        <p><h3>Implementation</h3></p>
+
+        <ul><li>I have the example of a dataset from the NLTK corpus.</li></ul>
+
+        <p>
+            <div class="complexjson" >
+                <img src="/static/images/bigram.png" alt="Trulli" width="900px" height="200px">
+            </div> 
+        </p>
+
+        <p>Here, the dataset = 'english-web.txt' from the genesis corpus.</p>
+
+        <p>The above code displays the top ten bigram collocations in Genesis are listed below, as measured using Pointwise Mutual Information.</p>
+
+        <p>Point Mutual Information is another hidden topic for another day!</p>
+
+        <p>
+            <div class="bigram" >
+                <img src="/static/images/bigramexample.png" alt="Trulli" width="300px" >
+            </div> 
+        </p>
+
+        <p>The expressions of these words could be infrequent. Hence, they need to be filtered properly. The code below does that exactly.</p>
+
+        <p>
+            <div class="bigram" >
+                <img src="/static/images/filter.png" alt="Trulli" width="500px" height="400px">
+            </div> 
+        </p>
+
+        <p>Below is the code to identify the Collocation using TriGram Measure.</p>
+
+        <p><div class="complexjson" >
+            <img src="/static/images/trigram.png" alt="Trulli" width="900px" height="200px">
+        </div> </p>
+
+        <p>The output is</p>
+
+        <p>
+            <div class="bigram" >
+                <img src="/static/images/trioutput.png" alt="Trulli" width="500px" height="400px">
+            </div> 
+        </p>
+
+        <p>I guess this is enough today. </p>
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
