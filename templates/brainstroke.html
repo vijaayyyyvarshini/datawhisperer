@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <p>Do you remember these movie scenes, where a person just goes brain dead?</p>
+
+        <p>Yes, one of the things could a brain stroke. *OOPS* I just feel sad for these immediate attacks. Wouldn't it be awesome where you were able to detect these strokes before they occured? </p>
+        
+        <p>How is this possible then?</p>
+
+        <p>With Machine Learning and Deep Learning, anything is possible. We have made the impossible, possible. *Does that make sense?* </p>
+    
+        <p>Okay, I think you have already guessed it right. <h3>Detecting Brain Strokes using Visual Geometry Group Model</h3>is one of the projects I worked on. It was my capstone project.</p>
+    
+        <p><h3>Abstract</h3></p>
+
+        <p>Stroke has become the top reason for the high mortality and disability rate in the current era. Early detection and prediction of stroke can significantly improve patient outcomes. In this study, we propose a deep learning approach using the VGG16 model to predict the occurrence of a brain stroke. We use a dataset consisting of MRI images of patients with and without stroke. The VGG16 model is pre-trained on the ImageNet dataset and fine-tuned on our dataset to predict stroke occurrence. Our experimental results demonstrate that the proposed approach achieves high accuracy and can effectively predict stroke occurrence. We have also conducted an extensive analysis of the model’s performance and provided insights into the important features used by the model to predict stroke occurrence. The proposed approach has the potential to be used in clinical settings to aid in the early detection and prevention of stroke.</p>
+    
+    
+        <h3>DATA DESCRIPTION</h3>
+        <p>The dataset used for this theory is collected from Kaggle, an online community, and platform that owns millions of diverse datasets that can be used for analysis. They are a collection of medical images, specifically computed tomography (CT) images, of the brain of individuals who have experienced a stroke and of individuals who have not experienced a stroke. There are a total of 2501 images in the datasets out of which 1501 belong to individuals who have not experienced strokes and the remaining 950 belong to individuals who have experienced a stroke.
+            This displays the binary classification problem in the picture where the images belong to two different classes.
+        </p>
+
+        <h3>METHODOLOGY</h3>
+        <h4>1. DATA PRE-PROCESSING</h4>
+
+        <p>The final image size of the dataset which has been used as an input for the VGG16 (Visual Geometry Group) model is 256x256 pixels. In the next pre-processing step we have split our dataset into training (80 percent), testing (10 percent), and validation (10 percent) sets. To include more samples in our dataset we have implemented an image data generator that creates different variations of an image at each epoch. The variations include random image rotations, horizontal flips, and shifts. Additionally, zoom and brightness effects are set in the range of 0.2 and 0.8. After the pre-processing steps, the transformed images are used by the VGG16 model to predict the outcome of a stroke in a patient.</p>
+
+
+        <h4>2. BASELINE MODEL</h4>
+
+        <p>The VGG16 model which is a 16-layered deep image classification convolutional neural network (CNN) architecture has been used as the baseline model in our research. The pre-trained VGG16 model can classify over 1000 images from different categories. We have incorporated the VGG16 model into our sequential model with several flattened, dense and output layers. The output layer consists of a sigmoid activation function which is used for binary classification that consists of two classes i.e. stroke and non-stroke. Model training was done on 25 epochs and a batch size of 32. The final sequential model used a monitoring metric called early stopping that halts the training process when there is no further improvement in learning.</p>
+    
+    
+        <p>In this proposed system, we use ’Adam’ optimizer for our model because the Adam optimizer gets dynamically adjusted for each parameter based on the first and second moments of the gradients which increases the efficiency of the model performance and simultaneously, requires low storage space. We are calculating the loss by the binary cross-entropy metric which could compute the gradients correctly and encourage classification with a high accuracy rate.</p>
+    
+        <p>The model also makes use of early stopping, which creates an early stopping call back that monitors the validation accuracy and stops the training process if the accuracy does not improve for a specified number of epochs.</p>
+        
+        <p><span style="text-align: center;margin-left: 500px;">Model Build</span></p>
+        <div class="image-container">
+            <img src="/static/images/vgg16modelcreating.png" class="image" alt="VGG16">
+        </div>
+
+        <br><p><span style="text-align: center;margin-left: 500px;">Model Summary</span></p>
+        <div class="image-container">
+            <img src="/static/images/modeltrain.png" class="image" alt="VGG16">
+        </div>
+
+        <h4>3. RESULT</h4>
+
+        <p>During the first epoch, the training accuracy started at 61 percent which increased significantly to 83 percent at the end of the 25th epoch. While predicting outcomes on the test dataset the model was able to predict over 80 percent correct outcomes. Since the difference between the train and test accuracies is not too high we can say that the model is not prone to overfitting.
+            From the Classification report, it can be determined that the value of precision for people with no brain stroke is 0.90, and for the people with brain stroke detection is 0.77 which means that there are more people not detected with brain stroke and fewer people with brain stroke.
+            </p>
+
+            <div class="image-container">
+                <img src="/static/images/brain.jpg" class="image" alt="brainstrokeprediction">
+            </div>
+        
+        <p>Figure 2 portrays the difference between a normal brain and a brain that has stroke. The image on the left side represents the scans of the patients with no stroke prediction and the images in the right side are that of the people who have experienced a brain stroke. </p>
+        
+        <p>Figure 3 represents the graphical representation of the performance of the Visual Geometry Group Model during the training and validation phases. This measures the model’s ability to correctly classify data points and is plotted against the number of epochs of the training process. According to the image on the left, the image represents the model loss and exhibits that the model performed well without any overfitting till the 5th epoch, as the training and validation loss are close enough with each other. The image on the right represents the model accuracy that measures the overall performance of the model. </p>
+        <div class="image-container">
+            <img src="/static/images/AUC.png" class="image" alt="AUC">
+        </div>
+
+        <div class="image-container">
+            <img src="/static/images/cm.png" class="image" alt="confusionmatrix">
+        </div>
+
+       <br> <p> Figure 4 is a confusion matrix, that compares the actual and predicted values of the model on the given dataset. The confusion matrix displays the least number of true positives. The number of true negatives are more than the number of true positives, which means that there is more prediction for people with brain stroke. </p>
+
+        
+        <div class="image-container">
+            <img src="/static/images/cr.jpg" class="image" alt="clasificationreport">
+        </div>
+
+        <br><p>Figure 5 portrays the classification report, and provides the detailed evaluation of the model’s ability to correctly classify instances and is typically used in the classification tasks where the goal is to predict the class of the given dataset. The proportion of the positive instances that were correctly predicted by the model is 0.90 and the proportion of actual positive instances that were correctly identified by the model is 0.86. </p>
+        
+        <h4>4. CONCLUSION</h4>
+
+        <p>In conclusion, the VGG16 model has shown promising results in predicting the occurrence of brain stroke using medical imaging data. Our research has demonstrated that the VGG16 model can achieve high accuracy of 80 percent in predicting the likelihood of stroke by analysing the images of the brain without any overfitting.</p>
+        
+        <p>However, further research is needed to improve the accuracy and generalizability of the VGG16 model, as well as to explore its potential for other medical imaging applications.
+            Additionally, it will be important to address ethical and privacy concerns related to the use of patient data in developing and deploying AI models for medical diagnosis. Overall, our research suggests that the VGG16 model has significant potential as a tool for predicting brain stroke using medical imaging data, and underscores the importance of continued research and development in this area.
+            </p>
+
+        <h4>5. REFERENCES</h4>
+
+        <ul>
+        <li>Chen, L., Bentley, P.,Rueckert, D. (2017, June 13). Fully automatic acute ischemic lesion segmentation in DWI using convolutional neural networks. NeuroImage: Clinical. Retrieved February 27, 2023, from https://www.sciencedirect.com/science/article/pii/S221315821730147X</li>
+
+        <li>Bentley P, Ganesalingam J, Carlton Jones AL, Mahady K, Epton S, Rinne P, Sharma P, Halse O, Mehta A, Rueckert D. Prediction of stroke thrombolysis outcome using CT brain machine learning. Neuroimage Clin. 2014 Mar 30;4:635-40. doi: 10.1016/j.nicl.2014.02.003. PMID: 24936414; PMCID: PMC4053635.</li>
+
+        <li>Shin H, Kim J, K, Choo Y, J, Choi G, S, Chang M, C: Prediction of Motor Outcome of Stroke Patients Using a Deep Learning Algorithm with Brain MRI as Input Data. Eur Neurol 2022;85:460-466. doi: 10.1159/000525222</li>
+        
+        <li>Ozaltin O, Coskun O, Yeniay O, Subasi A. A Deep Learning Approach for Detecting Stroke from Brain CT Images Using OzNet. Bioengineering. 2022; 9(12):783.
+            https://doi.org/10.3390/bioengineering9120783
+            </li>
+        
+        <li>[6]	Pandian, J.D.; Gall, S.L.; Kate, M.P.; Silva, G.S.; Akinyemi, R.O.; Ovbiagele, B.I.; Lavados, P.M.; Gandhi, D.B.; Thrift, A.G. Prevention of stroke: A global perspective. Lancet 2018, 392, 1269–1278</li>
+    
+        </ul>
+        
+        
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

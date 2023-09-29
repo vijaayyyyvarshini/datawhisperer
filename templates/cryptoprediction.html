@@ -1,1 +1,72 @@
-Hello
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <p>My friend recently just invested in crypto and for gods sake, he got profit.</p>
+
+        <p>Personally, I wonder how these people actually do it. I have zero knowledge about Crypto and investing in it.</p>
+
+        <p>I am like super beginner pro max in predicting the crypto currency increases/decreases. But, What if I say a machine learning model can do it instead?</p>
+    
+        <p>The point here is, they can! *rotates eyes* And yes, I don't have any beef with these ML models but just saying. They are much better than me LOL.</p>
+    
+    
+        <p>Kaggle just opened up a competition where the task was to predict these crypto currencies everyday. My friend and I were bold enough to join it and turn this into our capstone project.</p>
+    
+        <p><h3>1. ABSTRACT</h3></p>
+
+        <p>Over $40 billion worth of cryptocurrencies are traded every day and a lot of people are getting into the culture of cryptocurrencies. From being the most mind blowing concept of technology in the tech world, it has now become the generic form of transaction in the digital money field, breaking the stereotype towards conventional usage of money. Simultaneously, with the increase of people making use of cryptocurrencies, the possibility to predict the pattern for future scopes have paved their way. The proposed system makes use of the deep learning model, Long Term Short Memory (LSTM) and XG Boost , along with new activation functions to forecast short term returns in 14 popular crypto currencies. XG Boost is a highly effective and widely used machine learning method. It is used widely by data scientists to achieve state-of- art results on many machine learning challenges. These models have achieved great results over the last few years so everyone uses these for most tabular competitions. The results are evaluated based on the Mean Absolute Error (MAE) and the MAE for both the models are pretty valid leading to an overall decent accuracy. After we submitted to Kaggle we got 479 rank out of 1067 participant.
+        </p>
+
+        <h3>2. DATASET</h3>
+
+        <p>The dataset for the above mentioned problem is taken from Kaggle. It is a current on-going competition. The competition is called ‘G-Research Crypto Forecasting’. Millions of rows of high-frequency market data dating back to 2018 were collected by G-Research. There are two different csv files of datasets. The first dataset is the asset_details.csv file which consists of the 13 different cryptocurrency available along with their weights and asset_id.</p>
+    
+        <div class="image-container">
+            <img src="/static/images/fig1crypto.png" class="image" alt="Figure1">
+        </div>
+
+        <br><p>The other dataset is the train.csv file which contains the cryptocurrency information in 10 different columns and 5000 rows altogether. The details of the information given in this train.csv file is as follows:</p>
+
+        <ul>
+            <li>timestamp: All timestamps are returned as second Unix timestamps (the number of seconds elapsed since 1970-01-01 00:00:00.000 UTC). Timestamps in this dataset are multiple of 60, indicating minute-by-minute data.</li>
+            <li> Asset_ID: The asset ID corresponding to one of the crypto currencies (e.g. Asset_ID = 1 for Bitcoin). The mapping from Asset_ID to crypto asset is contained in asset_details.csv.</li>
+            <li>Count: Total number of trades in the time interval (last minute).</li>
+            <li>Open: Opening price of the time interval (in USD).</li>
+            <li>High: Highest price reached during time interval (in USD).</li>
+            <li> Low: Lowest price reached during time interval (in USD).</li>
+            <li>Close: Closing price of the time interval (in USD).</li>
+            <li>Volume: Quantity of asset bought or sold, displayed in base currency USD.</li>
+            <li>VWAP: The average price of the asset over the time interval, weighted by volume. VWAP is an aggregated form of trade data.</li>
+            <li>Target: Residual log-returns for the asset over a 15 minute horizon.</li>
+    
+        </ul>
+
+        <p>These 10 columns represent the features of the dataset. Except the timestamp and asset_id, the other features are of type float. The timestamp and asset_id are of type int and have a memory usage of 390.8 KB.</p>
+
+        <div class="image-container">
+            <img src="/static/images/figure2.png" class="image" alt="Figure2">
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

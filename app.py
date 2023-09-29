@@ -97,6 +97,14 @@ def delete(id):
 def firstpage():
     return render_template('firstblog.html')
 
+@app.route('/contactme')
+def contactme():
+    return render_template('contactme.html')
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
+
 #render the second blog
 @app.route('/secondblog')
 def secondpage():
@@ -133,6 +141,18 @@ def eigthday():
 @app.route('/tenthblog')
 def ninethday():
     return render_template('tenthblog.html')
+
+
+
+
+#direction to projects
+@app.route('/brainstrokeprediction')
+def project1():
+    return render_template('brainstroke.html')
+
+@app.route('/cryptoprediction')
+def project2():
+    return render_template('cryptoprediction.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
