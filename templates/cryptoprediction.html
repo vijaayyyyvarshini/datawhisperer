@@ -16,12 +16,12 @@
     
         <p>Kaggle just opened up a competition where the task was to predict these crypto currencies everyday. My friend and I were bold enough to join it and turn this into our capstone project.</p>
     
-        <p><h3>1. ABSTRACT</h3></p>
+        <p><h3>ABSTRACT</h3></p>
 
         <p>Over $40 billion worth of cryptocurrencies are traded every day and a lot of people are getting into the culture of cryptocurrencies. From being the most mind blowing concept of technology in the tech world, it has now become the generic form of transaction in the digital money field, breaking the stereotype towards conventional usage of money. Simultaneously, with the increase of people making use of cryptocurrencies, the possibility to predict the pattern for future scopes have paved their way. The proposed system makes use of the deep learning model, Long Term Short Memory (LSTM) and XG Boost , along with new activation functions to forecast short term returns in 14 popular crypto currencies. XG Boost is a highly effective and widely used machine learning method. It is used widely by data scientists to achieve state-of- art results on many machine learning challenges. These models have achieved great results over the last few years so everyone uses these for most tabular competitions. The results are evaluated based on the Mean Absolute Error (MAE) and the MAE for both the models are pretty valid leading to an overall decent accuracy. After we submitted to Kaggle we got 479 rank out of 1067 participant.
         </p>
 
-        <h3>2. DATASET</h3>
+        <h3>DATASET</h3>
 
         <p>The dataset for the above mentioned problem is taken from Kaggle. It is a current on-going competition. The competition is called ‘G-Research Crypto Forecasting’. Millions of rows of high-frequency market data dating back to 2018 were collected by G-Research. There are two different csv files of datasets. The first dataset is the asset_details.csv file which consists of the 13 different cryptocurrency available along with their weights and asset_id.</p>
     
@@ -29,41 +29,132 @@
             <img src="/static/images/fig1crypto.png" class="image" alt="Figure1">
         </div>
 
-        <br><p>The other dataset is the train.csv file which contains the cryptocurrency information in 10 different columns and 5000 rows altogether. The details of the information given in this train.csv file is as follows:</p>
+        <br><p>The other dataset is the train.csv file which contains the cryptocurrency information in 10 different columns and 5000 rows altogether. The details of the information given in this train.csv file can be found in the following website:</p>
 
-        <ul>
-            <li>timestamp: All timestamps are returned as second Unix timestamps (the number of seconds elapsed since 1970-01-01 00:00:00.000 UTC). Timestamps in this dataset are multiple of 60, indicating minute-by-minute data.</li>
-            <li> Asset_ID: The asset ID corresponding to one of the crypto currencies (e.g. Asset_ID = 1 for Bitcoin). The mapping from Asset_ID to crypto asset is contained in asset_details.csv.</li>
-            <li>Count: Total number of trades in the time interval (last minute).</li>
-            <li>Open: Opening price of the time interval (in USD).</li>
-            <li>High: Highest price reached during time interval (in USD).</li>
-            <li> Low: Lowest price reached during time interval (in USD).</li>
-            <li>Close: Closing price of the time interval (in USD).</li>
-            <li>Volume: Quantity of asset bought or sold, displayed in base currency USD.</li>
-            <li>VWAP: The average price of the asset over the time interval, weighted by volume. VWAP is an aggregated form of trade data.</li>
-            <li>Target: Residual log-returns for the asset over a 15 minute horizon.</li>
-    
-        </ul>
+        <p>https://www.kaggle.com/competitions/g-research-crypto-forecasting/data</p>
 
         <p>These 10 columns represent the features of the dataset. Except the timestamp and asset_id, the other features are of type float. The timestamp and asset_id are of type int and have a memory usage of 390.8 KB.</p>
 
         <div class="image-container">
             <img src="/static/images/figure2.png" class="image" alt="Figure2">
         </div>
+
+        <h3>METHODOLOGY</h3>
+
+        <h4>1. DATA PREPROCESSING</h4>
+
+        <p>However, since 2018, interest in the crypto market has exploded, so the volatility and correlation structure in the data are likely to be highly nonstationary. These datasets are highly real life values and don’t contain any redundancy or false values. The size of the dataset is quite large and hence it might take a long time to train and validate the models. The dataset contains
+            6
+            every day timestamp counts which will make the predictions more easier and give accurate results. The dataset did have issues with the timestamp values. These mentioned values were of results from the previous years that were given as the starting date values. Hence, while data pre-processing, the starting date and closing date are changed to the current date and year to avoid confusion while the model is trained. There were also missing values which had to be replaced before the data was split into training and testing sets. However, there were no null values in the dataset.</p>
+            
+        <div class="image-container">
+                <img src="/static/images/figure3.png" class="image" alt="Figure3">
+        </div>
+
+        <br><p>The above table displays the weight of each coin. This is taken to see how each type of cryptocurrency is weighted and prioritized in the industry. From the given figure above, Bitcoin ranks in the first position. This portrays how famous it is among its audiences. Finding out the weight of each coin makes the data readable and more understandable.</p>
+        
+        <div class="image-container">
+            <img src="/static/images/figure4.png" class="image" alt="Figure4">
+    </div>
+
+    <br><h4>2. DATA NORMALIZATION</h4>
+
+    <p>The given dataset is first split into training, testing and validation sets with 50% of data given to the training set and 50% of the data is given to the testing set. Further, this testing set of data is divided into testing and validation sets with the same amount of split. Same amount of data split is done to ensure that the array is of the same shape with the same length of data and dimension. These split datasets have distorting differences in the ranges of values or lose
+        information. In order to normalize this, data Normalization is used.
+        For the Normalization of this dataset, MinMaxScaler() is used. The MinMaxScaler transforms features by scaling each feature to a given range. This estimator scales and translates each feature individually such that it is in the given range on the training set i.e (0,1).
+        The MinMaxScaler is represented by the formula:</p>
+
+        <p>X_scaled = X - X_min / X_max - X_min</p>
+
+        <p>Where X_min = the lowest value</p>
+        <p>X_max = the highest value</p>
+        <p>X_max - X_min = range of the values</p>
+    
+        <div class="image-container">
+            <img src="/static/images/figure5.png" class="image" alt="Figure5">
+    </div>
+
+    <br><p>The above image is a Scatter plot and it displays the scatter plot of the dimensions of the train and test data. The plotted graph looks crowded because of the range of values and the large size of the dataset in the given dataset file. The dimension of the train data is (2500,11) and the dimension of the test data is also (2500,11) as the split is 50%. The dataset is equally split into their respective regions.</p>
+    
+    <h4>3. DATA VISUALIZATION</h4>
+
+    <h5>Plotting training data distribution among different Assets (Crypto Currencies)</h5>
     
     
+    <div class="image-container">
+        <img src="/static/images/figure6.png" class="image" alt="Figure6">
+    </div>
+
+    <h5>Plotting candlestick chart for Bitcoin as an example</h5>
+
+    <div class="image-container">
+        <img src="/static/images/figure7.png" class="image" alt="Figure7">
+    </div>
+
+    <h5>Plotting volume trade</h5>
+
+    <div class="image-container">
+        <img src="/static/images/figure8.png" class="image" alt="Figure8">
+    </div>
+
+    <br><h4>5. BASELINE MODELS</h4>
+
+    <h5>XGBOOST</h5>
+
+    <p>Background Unlike Bagging that uses multiple “strong learners”, boosting emphasizes using multiple “weak learners”. When the models are "a bit strong", they will start fighting each other. If D1, D2, D3 are too complex (too strong), they will interfere with each other and affect the final prediction/classification results. Only when each other is a "weak learner", can we focus on our own prediction/classification, and then combine each other's results together. This is the concept of Boosting (of course, in terms of computational efficiency, it is faster to do so). When boosting, first build a simple model D1. At this time, there will be data with incorrect predictions. Increase the weight of these data and build a D2 model. After first adjustment there will still be data with incorrect predictions, and then increase the weight of the data. Build D3 model.</p>
+
+    <div class="image-container">
+        <img src="/static/images/XGboost.png" class="image" alt="XGBOOST">
+    </div>
+
+    <h5>LSTM</h5>
+
+    <p>LSTM, known as the Long Short-Term Memory model, is a type of a Recurrent Neural Network (RNN) that remembers all the previous values of inputs given to the neural network layers. LSTM is the most appropriate model to classify, process and predict when it comes to time series generation scenarios. The Relative insensitivity to gap length gives an advantage to the LSTM model over alternative RNNs and other sequential models.</p>
     
+    <div class="image-container">
+        <img src="/static/images/LSTM.png" class="image" alt="LSTM">
+    </div>
+
+    <br><p>A simple LSTM network consists of the following components.</p>
+
+    <li>Forget Gate</li>
+    <li>Input Gate</li>
+    <li>Output Gate</li>
+
+    <p>The LSTM model is of two types. Unidirectional LSTM models process the data only in one direction either forward or backward. The Bidirectional LSTM models process the data in both the directions simultaneously i.e. forward and backward.
+    </p>
+
+    <h4>6. HYPERPARAMETER TUNING</h4>
+
+    <p>RepeatedKfold was used for hyperparameter tuning along with RandomisedSearchCV. Repeated k-fold cross-validation provides a way to improve the estimated performance of a machine learning model. This involves simply repeating the cross-validation procedure multiple times and reporting the mean result across all folds from all runs. The number of fold is set to 10 and n_repeats is set to 1 for now. The hyperparameters we tried to tune in XG-Boost model are ‘colsample_bytree’, ‘n_estimators’, ‘learning_rate’ and ‘max_depth’. n_jobs is set to -1 which means each process takes the 100% usage of a given core.</p>
     
+    <h4>7. RESULTS</h4>
+
+    <p>By using XG-Boost model, we got a very good performance. It shows good result that both training loss and validation loss converge after 10 rounds. There is a little gap between training loss and validation loss which is a very good result to see.</p>
     
+    <div class="image-container">
+        <img src="/static/images/figure9.png" class="image" alt="figure9">
+    </div>
+
+    <div class="image-container">
+        <img src="/static/images/figure10.png" class="image" alt="figure10">
+    </div>
+
+
+    <br><p>The above represents the comparison between the loss and epoch in the LSTM model for the two different types of data i.e. the Train loss and Validation loss. It is portrayed that as the number of epoch increases, the loss value becomes smaller. Hence, the loss is inversely proportional to the epoch number. The red line represents the Validation Loss. This Validation Loss indicates how well the model fits new data. The blue line represents the Train Loss which indicates how well the model is fitting the training data. It can be clearly seen that the Validation Loss is better than the Train Loss which means that the validation dataset is easier to predict than the training dataset. The results are accurate enough as they are produced by the LSTM model which accounts for efficient time series generation prediction.
+    </p>
+
+    <p>FYI - After we submitted to Kaggle we got 479 rank out of 1067 participant. We got 0.3752 (XG- Boost with hyperparameters tuning) for our final submit, which is an improvement of our previous scores of 0.3550 (XG-Boost without hyperparameters tuning).</p>
     
+    <p>The accuracy of both the models was around 80%. We still needed to work on the hyperparameter and model tuning for better and effective results. The overall teamwork was achieved. Each of us individually contributed equally. There could have been chances of using additional models to train these datasets to find out the best result. The size of the dataset was too large. But, since it was real world, working on it was very interesting and challenging.</p>
     
+    <div class="image-container">
+        <img src="/static/images/figure12.png" class="image" alt="figure12">
+    </div>
+
+    <br><p>A big shout out to my friend - <span style="color: green;">Johnson</span> for partnering up with me for this project! Kudos Homie!</p>
     
-    
-    
-    
-    
-    
-        <footer>
+    <footer>
         <p>Copyright © 2023 Data Whisperer</p>
       </footer>
 
