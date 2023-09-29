@@ -201,27 +201,6 @@ footer {
     }
 }
 
-/*project 1 changes*/
-@media (max-width: 768px) {
-    body {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    /* Center-align text on smaller screens */
-    h1 {
-        text-align: center;
-    }
-
-    /* Add some margin to paragraphs for better readability */
-    p {
-        margin: 10px 0;
-    }
-
-    /* Adjust image width on smaller screens */
-    .image {
-        max-width: 100%;
-    }
-}
 
 
 
