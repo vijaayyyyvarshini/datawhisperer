@@ -41,17 +41,15 @@
     
         <p>The model also makes use of early stopping, which creates an early stopping call back that monitors the validation accuracy and stops the training process if the accuracy does not improve for a specified number of epochs.</p>
         
-        <p><span style="text-align: center;margin-left: 500px;">Model Build</span></p>
         <div class="image-container">
             <img src="/static/images/vgg16modelcreating.png" class="image" alt="VGG16">
         </div>
 
-        <br><p><span style="text-align: center;margin-left: 500px;">Model Summary</span></p>
         <div class="image-container">
             <img src="/static/images/modeltrain.png" class="image" alt="VGG16">
         </div>
 
-        <h4>3. RESULT</h4>
+        <br><h4>3. RESULT</h4>
 
         <p>During the first epoch, the training accuracy started at 61 percent which increased significantly to 83 percent at the end of the 25th epoch. While predicting outcomes on the test dataset the model was able to predict over 80 percent correct outcomes. Since the difference between the train and test accuracies is not too high we can say that the model is not prone to overfitting.
             From the Classification report, it can be determined that the value of precision for people with no brain stroke is 0.90, and for the people with brain stroke detection is 0.77 which means that there are more people not detected with brain stroke and fewer people with brain stroke.
