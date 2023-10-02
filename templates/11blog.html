@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Nothing has such a power to broaden the mind as the ability to investigate systematically"
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Marcus Aurelius
+            </p>
+        </blockquote>
+
+        <p>Day 10 - (10/02/2023)</p>
+
+        <p>It is Monday and I am back to the routine after two days of solid weekend and what did I do during my weekend?</p>
+
+        <p>Would love to say that I went apple picking, hung out with friends, partied?</p>
+
+        <p>NO!</p>
+
+        <p>I did not do any of those. I stayed at home, filling in job applications. What a weekend getaway right? It was more like weekend stay-in-and-do-nothing.</p>
+
+        <p>So, anyways, I sat at home and revised my knowledge in Viterbi Algorithm - a part of HMM in NLP</p>
+
+        <p>and, this is what I have today for you guys.</p>
+
+        <p>Shall we jump into the world of Viterbi?</p> <p>To start off, what a weird name right? Anyways, that is not our primary concern. Let's see how it works!</p>
+
+
+        <p><span style="color: green;">"The Viterbi algorithm is used to find the most likely sequence of hidden states in a hidden Markov model given a sequence of observed events or observations. This algorithm is particularly valuable in cases where you have a sequence of observations and want to infer the most likely sequence of hidden states that generated those observations."</span></p>
+    
+        <p>Now, to put this in simple words, just understand that we have the HMM model - (a language model) and this model has 2 states.</p>
+
+        <ul><li>Transition Probability</li><li>Emission Probability</li></ul>
+
+        <p>With the help of the Viterbi algorithm, we are able to calculate the maximum probability of a word in a sentence - transitioned to its current state from the previous state, and the probability it takes to generate that particular word.</p>
+
+       <h4>Transition Probability</h4>
+
+       <p>The Transition Probability, also known as the Transition Matrix, displays the probablity of a word transitioning from state i to state j.</p>
+       
+       <div class="image-container">
+        <img src="/static/images/transition.png" class="image" alt="Transitionmatrix">
+      </div>
+        <p>Example,</p>
+
+        <p><span style="color: purple;">I love to eat icecream</span> </p>
+
+        <p>The Transition state includes how the word has transitioned from one state to another. This is a main application for POS Tagging in a language.</p>
+
+        <p>For the above sentence, the transition would look like this:</p>
+
+        <p>Determiner (DT) -> Noun (N) -> Determiner(DT) -> Verb(VB) -> Noun(N)</p>
+
+        <h4>Emission Probability</h4>
+
+        <p>The Emission Probability helps in understanding the probability of the word it generates in the current state.</p>
+
+        <p>From the above sentence, we are able to calculate that the probability of the word produced - 'eat' is a Verb and is 0.8; thats is 80% the model is sure that the word eat is a Verb.</p>
+        
+        <p>I am not going to go deeper into HMM and these probabilities. This is just an abstract to understand their concepts, because without them, we cannot calculate the Viterbi Algorithm.</p>
+
+
+        <p>The formula used for Viterbi is - <span style="color: white;">MAX(p1p2p3p4p5) Probability(p1p2p3p4p5)</span></p>
+
+        <p>I am now going to do POS Tagging with the Viterbi Algorithm in a sentence.</p>
+
+        <p>Consider, <h4><span style="color: red;">My fans love to watch me play</span></h4></p>
+    
+        <p>In the above sentence, I assume the following,</p>
+
+        <p>My - Determiner</p>
+
+        <p>Fans - Noun (or) Verb</p>
+
+        <p>Love - Noun (or) Verb</p>
+
+        <p>to - Determiner</p>
+
+        <p>Watch - Noun (or) Verb </p>
+
+        <p>me - Determiner</p>
+
+        <p>Play - Noun (or) Verb </p>
+
+        <p>Using Viterbi, we can calculate this. I have attached my working below in the diagram.</p>
+
+        <div class="image-container">
+            <img src="/static/images/viterbiintro.jpg" class="image" alt="Viterbi1">
+          </div>
+
+          <div class="image-container">
+            <img src="/static/images/viterbimap.jpg" class="image" alt="Viterbi2">
+          </div>
+    
+          <br><p>From the above calculations, I was able to figure out that</p>
+
+        <p>My - Determiner</p>
+
+        <p>Fans - Noun</p>
+
+        <p>Love - Verb</p>
+
+        <p>to - Determiner</p>
+
+        <p>Watch - Verb </p>
+
+        <p>me - Determiner</p>
+
+        <p>Play - Verb </p>
+
+        <p>In order to derive to this conclusion, I made sure that I took the path of the transition that emitted the maximum probabilities.</p>
+    
+        <p>Now, another wonderous thing about this is that you can use Python to code this Viterbi.</p>
+    
+        <p>And, here is my python code:</p>
+
+        <div class="image-container">
+            <img src="/static/images/pythonviterbi.png" class="image" alt="Pythoncode">
+          </div>
+
+          <br><p>I developed this code like a year ago during my NLP class.</p>
+
+          <p>FYI - This is just basic understanding of how I used to Viterbi Algorithm.</p>
+
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

@@ -142,6 +142,10 @@ def eigthday():
 def ninethday():
     return render_template('tenthblog.html')
 
+@app.route('/11thblog')
+def tenthday():
+    return render_template('11blog.html')
+
 
 
 
