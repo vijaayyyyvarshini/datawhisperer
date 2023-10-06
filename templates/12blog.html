@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Love myself, love yourself, peace."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Kim Namjoon
+            </p>
+        </blockquote>
+
+        <p>Day 11 - (10/06/2023)</p>
+
+        <p>
+            I had the opportunity to work with my professor on a research work, predicting protein secondary and tertiary structures.
+        </p>
+        <p>Pretty amazing right?</p>
+
+        <p>The funny part is, I hate Biology, which is one of the reasons that made me like computers and oh boy, I ended up building neural networks and visualizing structures for proteins!</p>
+
+        <p>Yo, Vijay, how did that sound? Did you have fun?</p>
+        <p>You know what? I actually had fun.</p>
+
+        <p>I was happy in what I was doing because of two main reasons:</p>
+        <li>I loved my professor and I really wanted to work under him.</li>
+        <li>I love machine learning</li>
+
+        <br><p>At the end of the day, when you love something, you really put in the efforts for it!</p>
+
+        <p>Today, I am incorporating one of my journey where I used VARNA to visualise the secondary structures.</p>
+
+        <p>What is VARNA? (you will definitely ask this question)</p>
+
+        <p>Let me explain.. *ahem ahem, clears throat*</p>
+
+        <p>VARNA (Visualization Applet for RNA) is a software tool designed to visualize RNA secondary structures. It provides a graphical representation of RNA molecules, highlighting the base pairings and secondary structure motifs.</p>
+       
+        <p>Logic?</p>
+
+        <p>The logic behind VARNA is to make it easier for researchers and scientists to understand and analyze the complex folding patterns of RNA molecules.</p>
+
+        <P><span style="color: green;"> The RNA secondary structure prediction involves the determination of how RNA molecules fold into various structural elements, such as helices (stem-loop structures), bulges, internal loops, and hairpin loops.</span></P>
+
+        <p>Wow! That is interesting Vijay.. So, how what are the steps?</p>
+
+        <p><span style="color: red;"> RNA Sequence:</span></p>
+
+        <li>I input an RNA sequence into VARNA. This sequence can be obtained from experiments or generated computationally.</li>
+
+        <br><p><span style="color: red;"> Structure Prediction:</span></p>
+
+        <li>VARNA can predict the secondary structure of the RNA molecule based on the input sequence. It uses algorithms and energy minimization techniques to determine which bases form base pairs and how they interact.</li>
+
+
+        <br><p><span style="color: red;"> Representation: </span></p>
+
+        <li>Once the secondary structure is predicted, VARNA generates a graphical representation of the RNA molecule. It displays the RNA sequence as a linear strand, and it highlights base pairs and structural motifs using color-coding and line shapes.</li>
+
+        <br><p><span style="color: red;">Interactive Visualization:</span></p>
+
+        <p>ARNA allows users to interact with the graphical representation. They can zoom in and out, pan, and rotate the structure to explore different regions of the RNA molecule.</p>
+
+        <h4>Install VARNA</h4>
+
+        <p>Using the command below, we can install VARNA in our Python IDE.</p>
+
+        <div class="image-container">
+            <img src="/static/images/VARNAinstall.png" class="image" alt="Varna install">
+          </div>
+
+       <br><h4>Input - Protein Sequence</h4>
+
+       <p>Below is my protein sequence that I gave as an input - </p>
+
+       <div class="image-container">
+        <img src="/static/images/proteinsequence.png" class="image" alt="proteinsequence">
+      </div>
+
+      <br><p>Once, that is done, I run the VARNA in linear format. The below code tells us how we can run it.</p>
+
+
+      <p>def run_varna_linear(rna_sequence, rna_dot_bracket, output_file = 'rna_linear_plot.png'):</p>
+       <p># use -algorithm line</p> 
+        <p>!java -cp VARNAv3-93.jar fr.orsay.lri.varna.applications.VARNAcmd -sequenceDBN "$rna_sequence" -structureDBN "$rna_dot_bracket" -o "$output_file" -algorithm line -resolution 8.0 -bpStyle lw</p>
+
+
+        <br><h4>Visualise the Sequence - Linear Format</h4>
+
+        <div class="image-container">
+            <img src="/static/images/proteinpicture.png" class="image" alt="proteinpicture">
+          </div>
+
+          <br><p>How beautiful this picture looks?</p>
+
+          <p>The above protein sequence is in linear format</p>
+
+          <p>which is why, it is straight!</p>
+
+          <p>If a linear diagram can look this appealing, imagine what a planar structure could do?</p>
+
+          <p>However, in order to achieve this, we must use a parameter called 'algorithm radiate'</p>
+
+          <h4>Visualise the Sequence - Planar Structure</h4>
+
+          <p>This is in form of a helice structure</p>
+
+          <p>RNA molecules naturally fold into secondary structures based on the sequence of nucleotides <span style="color: red;">(A, U, G, C).</span></p>
+
+          <div class="image-container">
+            <img src="/static/images/helice.png" class="image" alt="helice">
+          </div>
+
+          <br><p>Now, I am going to show the highlights the pairs in the helice structure</p>
+
+          <div class="image-container">
+            <img src="/static/images/highlights.png" class="image" alt="highlights">
+          </div>
+          
+          <br><h4>Energy</h4>
+
+          <p>The energy value of associated with an RNA secondary structure represents the thermodynamic stability or free energy of that particular structure. In the context of RNA secondary structures, this energy value indicates how favorable or stable the folding of the RNA molecule into the given structure is.</p>
+
+          <p>For my above protein sequence, my Energy output was -0.9.</p>
+
+          <div class="image-container">
+            <img src="/static/images/energy.png" class="image" alt="Energy">
+          </div>
+
+          <br><p>A negative energy value, like -0.9 in my example, suggests that the RNA secondary structure is thermodynamically stable. In other words, it is energetically favorable for the RNA molecule to adopt this specific folding pattern.</p>
+
+          <p>Well, that sounds good? Doesn't it? We don't want an unstable protein structure.</p>
+
+          <p>I tell you that this energy can also be predicted by using the 'Nussinov's Alorithm' (maybe content for another day)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
