@@ -150,7 +150,9 @@ def tenthday():
 def eleventhday():
     return render_template('12blog.html')
 
-
+@app.route('/13thblog')
+def twelthday():
+    return render_template('13blog.html')
 
 
 #direction to projects

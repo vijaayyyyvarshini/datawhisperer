@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Trust yourself that you can do it and get it."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Baz Luhrmann
+            </p>
+        </blockquote>
+
+        <p>Day 12 - (10/08/2023)</p>
+
+        <p>Its Day 12! I am proud. I sure have come a long way.. Every day, creating content is an exhaustion. I spend atleast 1 hour thinking about what to do today. Sometimes, my brain gets so tired from the thinking that I don't want to do it again.</p>
+
+        <p>I read in a book that we humans are capable of producing <span style="color: red;">70,000</span> thoughts per day and that we process it at a very high speed.</p>
+    
+    
+        <p>In these 70,000 thoughts of mine, the odd of me writing about today's topic could be 0.01%.And with a very few possibility, my brain considered writing about incorporating OOPS in a GAME. </p>
+    
+    
+        <p>OOPS (Object Oriented Programming) is programming paradigm that uses objects, which are instances of classes, to design and structure software. OOPS is based on several key principles and concepts that help organize and manage code in a more modular and reusable way. </p>
+    
+        <p>With OOPS, we have classes and objects.</p>
+
+        <p>My principles of software development class involved me to design a GAME with using these OOPS concept in the narratives.</p>
+    
+    
+        <p>I used:</p>
+
+       <h4>Classes</h4>
+
+       <p>A class is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class will have.</p>
+    
+       <div class="image-container">
+        <img src="/static/images/class.png" class="image" alt="Classes">
+        </div>
+
+    <br><p>Create_character is a class that I defined to create all my characters in the game.</p>
+
+    <br><h4>Objects</h4>
+
+    <p>An object is an instance of a class. It represents a real-world entity and encapsulates both data (attributes) and behavior (methods).</p>
+    
+    <div class="image-container">
+        <img src="/static/images/objects.png" class="image" alt="Object">
+        </div>
+
+       <br> <p>Here, Evander, lib, Castle, King, Merchant are all examples of objects initialised.</p>
+
+    <h4>Encapsulation</h4>
+
+    <p>Encapsulation is the practice of bundling data (attributes) and the methods (functions) that operate on that data into a single unit, known as a class. It hides the internal state of an object and exposes only the necessary functionality through methods.</p>
+
+    <div class="image-container">
+        <img src="/static/images/class.png" class="image" alt="Class2">
+        </div>
+
+   <br> <p>In the above code, I have used Encapsulation, as I have bundled up all the methods -<span style="color: red;"> CreateCharacter, setClothing, setExpression, and setHairstyle </span> into one class.</p>
+    
+    <h4>Inheritance</h4>
+
+    <p>Inheritance allows one class (subclass or child class) to inherit the attributes and methods of another class (superclass or parent class). It promotes code reuse and establishes a hierarchy of classes.</p>
+    
+    <div class="image-container">
+        <img src="/static/images/inheritance.png" class="image" alt="Inheritance">
+        </div>
+
+    <br><p>In my above diagram, I have done Inheritance while defining the user stories. This helps me to make use of parent class properties and resuse the code.</p>
+    
+    <h4>Abstraction</h4>
+
+    <p>Abstraction is the process of simplifying complex reality by modeling classes based on the essential properties and behaviors of objects. It involves ignoring the irrelevant details and focusing on what's important.</p>
+    
+    
+    <div class="image-container">
+        <img src="/static/images/abstract.png" class="image" alt="Abstraction">
+        </div>
+
+    <br><p>In the above code, I have defined two abstract classes and abstraction methods. </p>
+
+
+    <h4>Constructors and Destructors</h4>
+
+    <p>A constructor is a special method in a class that is called when an object is created. It initializes the object's attributes.</p>
+
+    <p>A destructor is a method that is called when an object is destroyed. In some programming languages, like C++, destructors are used for resource cleanup.</p>
+    
+    <p>I didn't explicitly define any Constructors and Destructors in my code.</p>
+
+
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
