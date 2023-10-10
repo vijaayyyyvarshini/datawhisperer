@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.”"
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Dale Carnegie
+            </p>
+        </blockquote>
+
+        <p>Day 13 - (10/09/2023)</p>
+
+        <p>Did y'all know that Pandas can be used for querying?</p>
+
+        <p>You mean the Python Pandas?</p>
+
+        <p>Yes, that is the same.</p>
+
+        <p>Uhm, Vijay? But, isn't SQL used for only data manipulation and analysis tasks?</p>
+
+        <p>It definitely is. But, Pandas can also be used in terms of SQL for querying.</p>
+
+        <p>And, with this in mind, I am going to show some of the examples of how various SQL operations would be performed using Pandas.</p>
+
+        <p>DISCLAIMER - If you're new to Pandas, you might want to take 10 minutes to first familiarize yourself with the library.</p>
+    
+        <p>I solved some easy SQL questions long back and today I wanted to show how these SQL questions can be written in Pandas.</p>
+    
+    
+        <p>These questions are from LeetCode. You can check them out too.</p>
+        <h4>Question 1</h4>
+
+        <div class="image-container">
+            <img src="/static/images/question1.png" class="image" alt="question1">
+        </div>
+
+        <br><h5>SQL Code</h5>
+
+        <div class="image-container">
+            <img src="/static/images/sql1.png" class="image" alt="SQL1">
+        </div>
+
+        <br><p>The time complexity for the above SQL code is O(n).</p>
+   
+
+        <br><h5>PANDAS</h5>
+
+        <div class="image-container">
+            <img src="/static/images/pandas1.png" class="image" alt="Pandas1">
+        </div>
+
+        <br><p>The time complexity for the above Pandas code is O(n).</p>
+
+        <p>The above Pandas code,  takes a Python function find_products that takes a Pandas DataFrame called products as input and filters it to find products that meet certain criteria. </p>
+
+        <p>Specifically, it filters products where both the 'low_fats' and 'recyclable' columns have the value 'Y' and returns the 'product_id' column of the filtered products.</p>
+        
+
+        <p>This function assumes that the input DataFrame products contains columns named 'low_fats', 'recyclable', and 'product_id'. It filters the DataFrame to include only rows where 'low_fats' is 'Y' and 'recyclable' is 'Y', and then it returns a DataFrame containing only the 'product_id' column of the filtered products.</p>
+
+
+        <h4>Question 2</h4>
+
+        <div class="image-container">
+            <img src="/static/images/question2.png" class="image" alt="question2">
+        </div>
+
+        <br><h5>SQL Code</h5>
+
+        <div class="image-container">
+            <img src="/static/images/sql2.png" class="image" alt="SQL2">
+        </div>
+
+        <br><p>The time complexity for the above SQL code is O(n * log(n)).</p>
+   
+        <br><h5>PANDAS</h5>
+
+        <div class="image-container">
+            <img src="/static/images/pandas2.png" class="image" alt="Pandas2">
+        </div>
+
+        <br><p>The time complexity for the above SQL code is O(m * log(m)).</p>
+
+        <p>The above Pandas performs the following query:</p>
+
+        <li>It first filters the input DataFrame views to select rows where the 'author_id' is equal to the 'viewer_id,' indicating that the author viewed their own article.</li>
+        <li>It then extracts the unique author IDs from the filtered DataFrame using the .unique() method.</li>
+        <li>The unique author IDs are sorted in ascending order.</li>
+        <li>Finally, a new Pandas DataFrame result_df is created with a single column 'id,' containing the sorted unique author IDs.</li>
+    
+    
+        <br><p>Now, y'all might be probably thinking, the time complexities for both of the code is same. So, how do you say one is different from the other?</p>
+    
+        <p>Which is better in usage?</p>
+
+        <p>NONE</p>
+
+        <p>The choice between using SQL or Pandas for data manipulation and querying depends on several factors, including the specific use case, your familiarity with the tools, and the size and complexity of the dataset. Both SQL and Pandas have their strengths, and the decision should be based on what best suits your needs.</p>
+    
+
+        <h4>SQL VS PANDAS (QUERYING)</h4>
+
+        <h5>SQL</h5>
+
+        <ul>
+            <li>Working with Large Databases: SQL databases are optimized for handling large datasets efficiently. If you're dealing with massive datasets, SQL databases might be more performant than Pandas, which loads data into memory.</li>
+            <li>Complex Queries: SQL excels at handling complex queries involving multiple tables, joins, aggregations, and subqueries. It is the go-to tool for relational data analysis.</li>
+            <li>Data Integrity and Security: SQL databases offer robust data integrity constraints, transaction support, and user access control, making them suitable for critical and secure data management.</li>
+            <li>Data Retrieval and Storage: When dealing with data retrieval and storage, SQL databases are well-suited for data persistence and retrieval in production systems.</li>
+            <li>Team Collaboration: SQL databases are commonly used in organizations, and SQL queries provide a common language for data analysis, making it easier for teams to collaborate and share analyses.</li>
+        </ul>
+
+        <h5>PANDAS</h5>
+
+        <ul>
+            <li>Data Exploration and Analysis: Pandas is excellent for exploratory data analysis (EDA) and quick data manipulation tasks. It provides an interactive and flexible environment for data exploration.</li>
+            <li>Small to Medium-Sized Datasets: For datasets that comfortably fit in memory, Pandas offers a convenient and efficient way to manipulate data. It's especially useful for data preprocessing and cleaning.</li>
+            <li>Custom Data Transformations: Pandas is highly flexible and allows you to apply custom data transformations, calculations, and feature engineering with ease.</li>
+            <li>Prototyping and Rapid Development: Pandas is ideal for prototyping and rapidly iterating on data analysis tasks. It provides a user-friendly interface that is well-suited for data scientists and analysts.</li>
+            <li>Data Visualization: Pandas integrates well with data visualization libraries like Matplotlib and Seaborn, making it convenient for generating charts and graphs.</li>
+            <li>Machine Learning: Many machine learning libraries in Python (e.g., Scikit-Learn) accept Pandas DataFrames as input, making it a seamless choice for preprocessing and feature engineering in machine learning pipelines.</li>
+        
+        </ul>
+
+
+
+
+
+            
+        
+        
+        
+        
+        
+        </table>
+    
+    
+            <footer>
+                <p>Copyright © 2023 Data Whisperer</p>
+              </footer>
+    
+    
+    
+        
+
+    </body>
+
+{% endblock %} 

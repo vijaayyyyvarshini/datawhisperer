@@ -154,6 +154,10 @@ def eleventhday():
 def twelthday():
     return render_template('13blog.html')
 
+@app.route('/14thblog')
+def thirteenthday():
+    return render_template('14blog.html')
+
 
 #direction to projects
 @app.route('/brainstrokeprediction')
