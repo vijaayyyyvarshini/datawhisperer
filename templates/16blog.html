@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "If you believe in yourself and have dedication and pride - and never quit, you'll be a winner. The price of victory is high but so are the rewards."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Bear Bryant
+            </p>
+        </blockquote>
+
+        <p>Day 15 - (10/20/2023)</p>
+
+        <p>'This week was a rollercoaster for me'. </p>
+
+        <p>My ears have heard this line uncountable times, and I have just nodded and let loose of the sentence.</p>
+
+        <p>Until I experienced it on my own. Everything is just a story until we feel it in our boots. Isn't it?</p>
+    
+        <p>My past week was indeed a rollercoaster. I went up and down and up again.</p>
+    
+        <p>I had such mood swings and was emotionally drained that I did not dare to open LinkedIn and keep up with trends and news.</p>
+    
+        <p>Maybe, this is the break my brain needed, and it overrides the days when I denied the idea of taking a break.</p>
+    
+        <p>But, life works in its ways and I couldn't stand a chance in front of the tantrums my mental health was weighing down on me.</p>
+    
+        <p>What are the consequences?</p>
+
+        <li>0 Posts.</li>
+        <li>0 Comments.</li>
+        <li>0 Follows.</li>
+
+        <br><p>and my engagements looked like this: </p>
+
+        <div class="image-container">
+            <img src="/static/images/16blog.png" class="image" alt="graph">
+        </div>
+    
+        <br>
+        <li>59.9% ⬇ (past 14 days)</li>
+        <li>AVG(Impressions) - 4.27% ⬇ per day?</li>
+
+        <br><h3>Descriptive analysis?</h3>
+
+        <li>Sudden Spike on October 9-10: A post - that suddenly gained a significant amount of attention.</li>
+
+        <li>Steady Decline Post-Spike: This could indicate that while there was a burst of interest around the specific event or content, it did not have a lasting impact in terms of engagement.</li>
+
+        <br><h3>Statistical analysis?</h3>
+
+        <li>Range: near 0 > x < near 7.5k.</li>
+        <li>Mean: AVG(2.5k + 7.5k + 2k) = 3.5k to 4k.</li>
+        <li>Mode: around 2k</li>
+
+        <br><h3>Percentiles</h3>
+
+        <li>0th percentile: 0</li>
+        <li>25th Percentile (Q1): divide the graph into 4 parts ; Q1 = x < 25% ; around 2.1k-2.2k impressions.</li>
+        <li>50th Percentile (Q2 or Median): divide the graph into halves ; around 2k impressions.</li>
+        <li>75th Percentile (Q3): Q3 = x < 75% ; around 2.5k-2.7k impressions.</li>
+        <li>100th Percentile = 7.5k impressions.</li>
+
+        <br><p>Interquartile Range (IQR): This is the range between Q1 and Q3 and gives an idea of the spread of the middle 50% of the data.</p>
+
+        <p>Hence, IQR = Q3 - Q1</p>
+
+        <p>Estimating from my values, IQR might be approximately 2.5k - 2.1k = 0.4k or 400 impressions.</p>
+
+        <h3>Results</h3>
+
+        <li>The graph below illustrates content performance over two weeks, revealing a notable peak in impressions on Oct 9-10, exceeding 7.5k.</li>
+
+        <li>However, this surge was short-lived, as the subsequent days showed a sharp decline, stabilizing around 2k impressions.</li>
+
+        <li>The overall trend, post-spike, indicates a consistent, lower engagement level.</li>
+
+        <li>This data suggests that while there was a momentary boost in content visibility or interest, it did not sustain in the following days.</li>
+        
+        <br><footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
