@@ -1,9 +1,9 @@
 h1 {
     border: 2px #eee solid;
-    color: purple;
+    color: rgb(247, 242, 245);
     text-align: center;
     padding: 10px;
-    background-color: pink;
+    background-color: rgb(208, 90, 234);
     margin-top: 40px;
 }
 

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "It always seems impossible until it's done."
+            </p>
+            <p class="blockquote_text blockquote_text_author">
+                Nelson Mandela
+            </p>
+        </blockquote>
+
+        <p>Day 16 - (10/22/2023)</p>
+
+        <p>How many of you knew that you could request LinkedIn for a copy of your own data?</p>
+
+        <p>I got to know this late. Up until a few weeks before, I was playing around with my LinkedIn pages and realized that I could get my account data.</p>
+
+
+        <p>I knew for a reason that I needed to do something with this data.</p>
+
+        <p>and, my mind went to - Tableau Dashboard!</p>
+
+        <p>I know for a fact that this idea sounds generic and dull.</p>
+        <p>'Hey, we have seen so many people already do this. It is nothing new.'</p>
+        <p>I can hear those voices. But, does that make me the same as everyone?</p>
+        <p>No! </p>
+
+        <p>Not two DNA can be similar.</p>
+        <p>Similarly, not two Dashboards can be the same!</p>
+        <p>With a Tableau Dashboard, I will be able to visualize my own LinkedIn page and make decisions based on that. </p>
+
+        <p>I used the Tableau Desktop to create my sheets and Dashboard.</p>
+
+        <p>My Dashboard looks like this:</p>
+
+        <div class="image-container">
+            <img src="/static/images/dashboard.png" class="image" alt="LinkedIn Dashboards">
+        </div>
+
+        <br>
+        <p>My brain has also worked out some of the Statistical Interpretations.</p>
+
+        <p><h3>Tree Map - Number of people in each company:</h3></p>
+
+        <li>The data shows a high variance, with certain companies or universities (like Saint Louis University) having a significantly higher representation than others.
+        </li>
+
+        <p><h3> Number of companies applied for in a particular day via LinkedIn:</h3></p>
+
+        <li>The modal (most frequent) number of applications in a day seems to be around 2-3, as multiple dates have these values.</li>
+
+        <p><h3> Number of Messages Received:</h3></p>
+
+        <li>There's a wide spread, with values ranging from 14 to 99 messages.</li>
+        <li>The distribution seems right-skewed, with fewer people receiving very high messages and more people receiving fewer messages.</li>
+
+
+        <p><h3> Number of people with the same first name:</h3></p>
+        <li>The data spread from 1 to 5, is not widespread but shows a variance in name popularity.</li>
+        <li>Again, it seems right-skewed, with fewer names being very common and many names being less common.</li>
+
+    
+        <p><h3> Number of connections in each week:</h3></p>
+        <li> With the running total graph, it looks like there's an upward trend in the number of connections over time.</li>
+    
+        <li>Initially, the growth seems stable but starts to increase rapidly around mid-May. This suggests some external factors or efforts might have led to a boost in connections.</li>
+    
+        <li>The time (in weeks) and the number of connections are positively correlated, meaning as time progresses, the number of connections tends to increase</li>
+    
+    
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
