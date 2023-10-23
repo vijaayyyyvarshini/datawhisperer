@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "If opportunity doesn't knock, build a door."
+            <p class="blockquote_text blockquote_text_author">
+                Milton Berle
+            </p>
+        </blockquote>
+
+        <p>Day 18 </p>
+
+        <p>Ever wondered why we celebrate success but often keep our failures in the shadows? 🤔 🤔</p>
+
+        <p>Success stories are inspiring, but let's be real: our greatest lessons often come from our stumbles and setbacks.</p>
+
+        <p>Today, I'm peeling back the curtain to share an error that I came across last week which I have yet to solve ( I have not given up yet. I am still working on it).</p>
+
+        <p>Because I feel that failures are also a part of us. Without them, we wouldn't be strong enough.</p>
+
+    
+        <p>You all know, I have dived into this abyss of continuous learning. The more I unwrap different concepts and theories to learn, the more deeply interesting it gets for me. One such was the world of 'Web Scraping'.</p>
+    
+        <p>I decided to scrape my LinkedIn jobs at a particular time of the day and maybe see how I can work with it.</p>
+    
+    
+        <p>This seemed like an exciting idea for me because I had never done scraping from the internet before.</p>
+    
+        <p>I also would like to point out that, I scraped the public data from the public LinkedIn page (the page without getting logged in and this was entirely only for my educational purposes.)</p>
+    
+        <p>To play with this, I used a simple scrape spider (Python) called Scrapy, from the LinkedIn API endpoint to parse the job details from the response after the API call was made.</p>
+    
+        <p>But, do you think it is that easy to just scrape off data from a public site such as LinkedIn?</p>
+    
+        <p>No.</p>
+
+        <p>Why?</p>
+
+        <p>Because, LinkedIn has one of the most aggressive anti-scraping systems on the internet, making it very hard to scrape.
+        </p>
+        
+        <p>So, if we just run the scraper like that, it is going to get blocked.</p>
+
+        <p>To bypass LinkedIn's anti-scraping system we will need to use a proxy.</p>
+
+        <p>Hence, we have the 'ScrapeOps Proxy Aggregator'.</p>
+
+        <p>We first need to create an account, which will generate an API key.</p>
+
+        <p>I followed the tutorial from the video - https://lnkd.in/edC7VwMv (If anyone wants to check it out)</p>
+    
+        <p>I found this extremely helpful and understanding. I faced success until I came across this error.</p>
+        
+        <p>The jobs were scraped successfully from the LinkedIn page. However, while I was trying to dump these jobs in a JSON file, I was facing a '401' HTTP error.</p>
+        
+        <p>The error is as follows:</p>
+
+        <p>2023-10-21 19:12:33 [scrapy.core.engine] DEBUG: Crawled (401) <GET ...></GET></p>
+        
+        <p>According to me, I believe that one reason for this error could be something related to the API key, as there could be a limit to the size of data that can be scraped at a time. I haven't confirmed it yet.
+        </p>
+
+        <p>I am working on it and I know for sure I will find the solution.</p>
+        
+        <p>I believe, 'not giving up' is a part of my success.</p>
+        
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
