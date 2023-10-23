@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <blockquote class="blockquote blockquote--bordered">
+        <p class="blockquote_text">
+            "It’s not the load that breaks you down, it’s the way you carry it."
+        <p class="blockquote_text blockquote_text_author">
+            Lou Holtz
+        </p>
+    </blockquote>
+
+    <p>Day 17</p>
+
+    <p>Comments in coding are a cornerstone of good software development practices. </p>
+
+    <p>They serve as silent guides, offering clarifications and context to the code's structure and intent.</p>
+
+    <p>As the blueprint of software, code drives functionality, but it's the comments that ensure this functionality is transparent, maintainable, and scalable. </p>
+
+    <p>Without comments, code can become a labyrinth of logic, difficult to navigate, and prone to errors during modifications. </p>
+
+    <p>Whether for the original developer or a newcomer to the project, comments illuminate the path, making coding more efficient and collaborative. They act as the bridge between understanding the "what" and the "why" of a codebase, making them indispensable for ensuring long-term project success.</p>
+
+    <p>The image below is an example from the code.</p>
+
+    <div class="image-container">
+        <img src="/static/images/comments.png" class="image" alt="comments">
+    </div>
+
+    <br>
+    <p>Here are some reasons why comments are really important while writing your code.</p>
+
+    <li>Comments serve as in-line documentation for your code. When someone (including your future self) reads the code, they can quickly understand the purpose of a specific block or line without having to decipher the actual code logic.</li>
+
+    <li>Complex algorithms or logic might not be immediately clear. Comments can clarify the intention behind the code, ensuring that others understand its purpose and function.</li>
+
+    <li>In team environments, multiple developers work on the same codebase. Comments make collaboration smoother, helping team members understand each other's code, which expedites onboarding and reduces the time needed to get familiar with new code.</li>
+
+
+    <li>When debugging, comments can help pinpoint certain functionalities or algorithms that might be the cause of an issue. Knowing the intention behind a block of code can make the debugging process more efficient.</li>
+
+
+    <li>Comments at the beginning of files often contain copyright, license, or attribution information, which can be vital for legal and open-source reasons.</li>
+
+    <li>Codebases often outlive the tenure of individual developers in an organization. Well-commented code eases maintenance tasks for new developers who might take over a project.</li>
+
+    <li>Developers often use comments to leave "to-do" notes for themselves or others. This can be a reminder to refactor a specific part of the code, to address potential edge cases, or to implement additional functionalities in the future.</li>
+
+    <br><p>For example, let us consider the below 2 pieces of codes.</p>
+
+    <div class="image-container">
+        <img src="/static/images/commentexplain.png" class="image" alt="comments vs no comments">
+    </div>
+
+    <br><p>In the above image, I have put in 2 same codes, where one code does not have any comments and the other one has comments.</p>
+
+    <p>Which do you think is more efficient?</p>
+
+    <p>Apparently, when a non-technical person takes a look at this, they would definitely not understand what is going on in the first image.</p>
+
+    <p>But, by taking a look at the second image, an individual can easily understand what is happening at that particular time.</p>
+
+    <p>This is exactly how comments leash its own power into the world of coding.</p>
+    
+    <p>If you are a beginner, starting out with coding, and want to become a forte in it, I kindly request all of you to start praticing writing code with comments.</p>
+    
+    <p>Because, with me, when I was a beginner, I hardly learn the importance of adding these comments until I faced the consequences myself.</p>
+    
+    <p>Small things matter !!</p>
+    <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

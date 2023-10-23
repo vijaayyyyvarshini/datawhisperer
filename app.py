@@ -170,6 +170,10 @@ def fifteenthday():
 def sixteenthday():
     return render_template('17blog.html')
 
+@app.route('/18thblog')
+def seventeenthday():
+    return render_template('18blog.html')
+
 
 #direction to projects
 @app.route('/brainstrokeprediction')
