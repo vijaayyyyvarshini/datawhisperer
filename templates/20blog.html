@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "If you want to lift yourself up, lift up someone else."
+            <p class="blockquote_text blockquote_text_author">
+                Booker T. Washington
+            </p>
+        </blockquote>
+
+        <p>Day 19 - (10/24/2023)</p>
+
+        <p>I am literally flying in the air. I haven't felt this happy and satisfied in a long time.</p>
+
+        <p>Do you know why?</p>
+
+        <p>I apparently watched a movie today. Yes, watching movies/series makes me happy. But, that is not what made me happy today.</p>
+        <p>I solved the issue I was talking about yesterday.</p>
+        <p>All by myself! Independently! No help taken. (This isn't something I should be proud of, because seeking assistance when needed is important. But, I am proud of myself)</p>
+        <p>*giving myself a little pat*</p>
+        <p>*screaming and happy tears*</p>
+
+        <p>Do you know what the issue was?</p>
+
+        <p>It was exactly what I thought would be.</p>
+        <p>The scraper API has a limit attached it and it can only scrape of such an amount. When I tried at first, I tried scraping off the first 200 jobs.</p>
+        <p>Obviously, the scraper stopped me and said, 'Sorry, I can't do that. I am only allowed to scrape until the limit'</p>
+    
+        <p>Sorry scraper. I understand you now.</p>
+
+        <p>So, once I fixed this issue, I was able to scrape off the contents and put them in a JSON file.</p>
+    
+        <p>Today, I would like to walk you through the process.</p>
+
+        <h3>Scraping LinkedIn Jobs</h3>
+
+        <p>Tech Stack - Python, VS Code, API</p>
+
+        <div class="image-container">
+            <img src="/static/images/linkedin.png" class="image" alt="LinkedIn Page">
+        </div>
+
+        <br><p>The above displays my public Linkedin page at exactly at 11 am in the morning.</p>
+
+        <p>Job Title that I want to scrape - Data Science</p>
+        <p>Location - United States</p>
+
+        <p>I started off with installing the necessary packages that I would need. They are:</p>
+
+        <li>git clone https://github.com/python-scrapy-playbook/basic-scrapy-project.git</li>
+        <li>python3 -m venv venv</li>
+        <li>source venv/bin/activate</li>
+        <li>pip install scrapy</li>
+        <li>Make sure you install this one as well - 
+            pip install scrapeops-scrapy-proxy-sdk</li>
+        <li>pip install scrapeops-scrapy</li>
+
+        <br><p>Make sure that you have installed and imported all these packages.</p>
+
+        <p>If you want to do this on your own, please follow the tutorial from the link below:</p>
+        <p><span style="color: red;">https://scrapeops.io/python-scrapy-playbook/python-scrapy-linkedin-jobs-scraper/</span></p>
+
+        <p>What happened? Why are you giving me that weird look? You thought I would possibly tell you guys how to web scrape? No, that is not what I am writing about today.</p>
+    
+        <p>My purpose of blog writing is to show the further analysis I did on this data that I scraped.</p>
+
+        <p>Goal 1 - Categorise the jobs into (Internship, Entry-Level and Senior Levels).</p>
+        <p>Goal 2 - Display the count of these jobs.</p>
+        <p>Goal 3 - Visualise them for better understanding.</p>
+
+        <p>I am basically transforming raw data into a meaningful format to make decisions.</p>
+
+        <p>With this simple analysis, I will be able to come to conclusion on the only jobs as I want to apply because I am only targetting entry level jobs and not internships or senior levels.</p>
+
+        <p>I would be able to save a lot of time and be efficient in applying for the jobs I need to.</p>
+
+        <h3>Step 1</h3>
+
+        <p>Importing the libraries</p>
+
+        <div class="image-container">
+            <img src="/static/images/Libraries.png" class="image" alt="Importing the packages">
+        </div>
+
+        <h3>Step 2</h3>
+
+        <p>With the inbuilt json.load function, I will be able to read the JSON file.</p>
+        <div class="image-container">
+            <img src="/static/images/jsonload.png" class="image" alt="Read JSON">
+        </div>
+
+        <h3>Step 3</h3>
+
+        <p>I am going to now convert the JSON file to a CSV with the following code.</p>
+
+        <div class="image-container">
+            <img src="/static/images/csv.png" class="image" alt="CSV">
+        </div>
+
+        <h3>Step 4</h3>
+
+        <p>Read the CSV file using the Pandas function.</p>
+
+        <div class="image-container">
+            <img src="/static/images/readcsv.png" class="image" alt="Read CSV">
+        </div>
+
+        <br><p>The CSV file contains - 984 rows and 6 columns.</p>
+
+        <h3>Step 5</h3>
+
+        <p>Check for null values. If there are no null values, you get 0s.</p>
+
+        <div class="image-container">
+            <img src="/static/images/nullchecks.png" class="image" alt="nullchecks">
+        </div>
+
+        <h3>Step 6</h3>
+
+        <p>Simple Pandas functions (Shape, column names, describe(), info())</p>
+
+        <li>To find the Shape</li>
+
+        <div class="image-container">
+            <img src="/static/images/shapes.png" class="image" alt="shapes">
+        </div>
+
+        <li>Display the existing columns</li>
+
+        <div class="image-container">
+            <img src="/static/images/columns.png" class="image" alt="columns">
+        </div>
+
+        <li>Statistical Information</li>
+
+        <div class="image-container">
+            <img src="/static/images/statistics.png" class="image" alt="statistics">
+        </div>
+
+        <li>Summary of the dataframe</li>
+        <div class="image-container">
+            <img src="/static/images/info().png" class="image" alt="info">
+        </div>
+
+        <h3>Step 7</h3>
+
+        <p>Now, in order to achieve my goals, I need to create a subset of a dataframe from the original dataframe.</p>
+
+        <p>The first subset dataframe contains only Data jobs (Data Science/Data Analyst). I have excluded any other Software Engineering, Project Management, Operational Jobs.</p>
+    
+        <div class="image-container">
+            <img src="/static/images/df1.png" class="image" alt="df1">
+        </div>
+
+        <h3>Step 8</h3>
+
+        <p>Using 'matplotlib' and 'seaborn', I am visualising them.</p>
+
+        <p>I am displaying the top 10 Job titles that are found in this data.</p>
+        <div class="image-container">
+            <img src="/static/images/g1.png" class="image" alt="graph1">
+        </div>
+
+        <h3>Step 9</h3>
+
+        <p>Next, I am going to create a subset of the only 'Internship' Jobs. I won't be needing this because I am not looking for intern positions. So, I can confidently discard this category.</p>
+
+        <div class="image-container">
+            <img src="/static/images/intern.png" class="image" alt="intern vs no intern">
+        </div>
+
+        <p>Visualise this further using a bar chart.</p>
+        <p>I am going to put the count of Internships Vs Non Internship opportunities.</p>
+
+        <div class="image-container">
+            <img src="/static/images/g2.png" class="image" alt="intern vs no intern">
+        </div>
+
+        <div class="image-container">
+            <img src="/static/images/g3.png" class="image" alt="intern vs no intern">
+        </div>
+
+        <br><p>From the above graph, we can conclude that the number of internship roles < number of full-time roles.</p>
+
+        <p>Next, from this Non-Internship dataframe, I am going to create another subset of Junior Level Positions.</p>
+
+        <div class="image-container">
+            <img src="/static/images/df3.png" class="image" alt="df3">
+        </div>
+
+        <div class="image-container">
+            <img src="/static/images/g4.png" class="image" alt="graph4">
+        </div>
+
+        <br><p>The above graph will help me to make a decision that I can only apply to 68 jobs which is Entry-Level/Junior level and save myself from applying to all the remaining 783 jobs.</p>
+        
+        <h3>Result</h3>
+
+        <p>From the above analysis, I have been able to achieve my goals. Now, I can just focus on applying for these Entry-Level jobs.</p>
+
+
+
+
+        
+
+
+
+
+
+
+
+    
+    
+    
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
