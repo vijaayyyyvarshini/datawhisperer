@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+        <br>
+        <h3>Data Analysis and Recommendations on Disney+ Hotstar Content</h3>
+        <h5>2019 VIT Hackathon</h5>
+
+        <p>This project was accomplished during the 2019 VIT Hackathon, conducted at Vellore, India. The topic was freedom of choice and my team had submitted an abstract on ‘Data Analysis and Recommendations on Disney+ Hotstar Content’.
+        </p>
+
+        <p>Now, I want to explain why we chose this domain and the topic.</p>
+
+        <li>I have seen the impact of data in everyday usage tremendously increase and as an undergrad student doing computer science, I wanted to get my hands dirty on something that was replenishing and growing. </li>
+
+        <br>
+        <li>Disney+ Hotstar is one of the most common platforms that people utilize in India, more than other famous streaming platforms. (For example, People from villages were connected to Hotstar more as Hotstar had all local content relative to the different cities and states in India. Hence, almost the majority of the people were able to use it. The second reason would be that it was much more affordable than other streaming platforms).</li>
+
+        <br>
+        <h5>Introduction</h5>
+
+        <p>The dataset that I obtained was from Kaggle. You can find the dataset at - https://www.kaggle.com/code/jeniljani/disney-hotstar-eda/input</p>
+
+        <p>My responsibilities are:</p>
+
+        <p>1. Conducting data analysis on the trends of the content that Disney+ Hotstar obtains and create a positive impact;</p>
+        <p>2. Influence decision-making to modify content to their catalog.</p>
+
+        <p>I utilized Python to perform EDA and visualizations, then come up with recommendations and storytelling on different graphs. My goals during the whole data analytics process are to (1) keep my exploratory simple and straightforward, and (2) design clear visualizations so they are effective and able to highlight important insights.</p>
+
+        <div class="image-container">
+            <img src="/static/images/disney.png" class="image" alt="Disney">
+        </div>
+
+        <br>
+        <h5>Disney+ Hotstar Dataset</h5>
+
+        <p>First and foremost, lets take a look at the dataset.</p>
+
+        <p>The dataset consists of 6874 rows of of movies and TV shows and 9 columns providing 9 characteristics for each movie/TV show. </p>
+
+        <div class="image-container">
+            <img src="/static/images/dataload.png" class="image" alt="readcsv">
+        </div>
+
+        <br>
+        <h5>Analysis and visualizations</h5>
+
+        <h6>1. The early rise and success of Hotstar in India</h6>
+
+        <p>Hotstar first debuted in 2015, as a means for Star to offer content from its various regional TV channels. Along with that, it also served as the place for sports fans to watch matches as well. Looking back, the service launched around the time of the 2015 Cricket World Cup in Australia.</p>
+
+        <p>Cricket became a major attraction for viewers on Hotstar. The platform further cemented its position and preference for Cricket fans as Star also owned the streaming rights for the wildly popular Indian Premier League (IPL). The app was a success during the 2015 edition of the IPL, as it reportedly garnered over 200 million views during the tournament. The views continued to grow during the corresponding editions of the IPL.</p>
+
+        <p>On top of cricket, fans of other sports also made their way to Hotstar. While football fans were able to watch English Premier League on the app, Formula 1 fanatics could also use the app to catch their favorite racers battle it out on Grand Prix weekends.</p>
+
+        <h6>2. Introduction of international content, especially HBO during Game of Throne's rise</h6>
+
+        <p>Other than sports streams, Hotstar also offered access to international content that Star owned the rights to broadcast in India.</p>
+
+
+        <p>In 2016, a year after the app's launch, the app had also negotiated a deal with popular US network HBO to stream its content through Hotstar in India. The deal coincided during the peak popularity of HBO's hit TV series, Game of Thrones.</p>
+
+        <p>The popularity of Game of Thrones saw viewers pinned to their screens on Monday mornings, as it coincided with the episode's release in the US on Sunday nights. Some other popular HBO shows available on Disney+ Hotstar included euphoria, Chernobyl, True Detective, Watchmen, Barry, Westworld, Silicon Valley, The White Lotus, Succession, and more. We also got access to some of the classics like Band of Brothers, The Pacific, The Sapranos, The Newsroom, and The Wire.</p>
+    
+        <p>With respect to its competitors Netflix and Amazon Prime Video, Hotstar had the edge due to its catalogue of prestigious TV content from HBO. Furthermore, following The Walt Disney Company's acquisition of Star and its parent company 21st Century Fox in 2019, Hotstar broke new ground.</p>
+    
+        <p>In 2020, the platform was rebranded as Disney+ Hotstar, with the platform becoming the home of Disney+ content in India. This move came just months after the global launch of Disney+ streaming service. The rebrand coincided with the start of Disney+ original programming with the Star Wars TV show, The Mandalorian. Disney+ Hotstar later introduced MCU fans with Marvel TV shows such as WandaVision, Loki, and more.</p>
+    
+        <p>Other than Star Wars and Marvel, Disney+ Hotstar also included content from various Disney IPs such as the company's massive library of animated TV shows, National Geographic, and more.</p>
+    
+    
+        <div class="image-container">
+            <img src="/static/images/stock.png" class="image" alt="Stock2019">
+        </div>
+
+        <div class="image-container">
+            <img src="/static/images/stock2.png" class="image" alt="Stocks">
+        </div>
+
+        <br><p>The first image displays the stock price for the year 2019 generated by Disney.</p>
+        
+        <p>From the above second image, We can see the revenue trajectory of Disney+ Hotstar over the years displays a positive growth trend. This indicates a steadily expanding user base, successful content strategy, or possibly a combination of both. </p>
+
+        <p>Between FY 2018 and FY 2019, the revenue is more than doubled, which showcased rapid early adoption or strategic changes that resonated with the user base.</p>
+
+        <p>After that, Disney+ Hotstar was on the growth track, and the peak global content amount was in 2022.</p>
+
+        <h6>3. Content Preferences on Disney+ Hotstar: Movies vs. TV Shows</h6>
+
+        <p>The summary of the data set shows that Disney+ Hotstar focused more on Movies than on TV Shows.</p>
+
+        <div class="image-container">
+            <img src="/static/images/tv:series.png" class="image" alt="Tv/series">
+        </div>
+
+        <br><p>It appears that Netflix has been focusing more on increasing Movie content, compared with TV Shows, since it is shown that the number of Movies added increased much more dramatically than the number of TV shows.</p>
+
+        <p>What about new content added each year?</p>
+
+        <div class="image-container">
+            <img src="/static/images/numbershows.png" class="image" alt="Frequency">
+        </div>
+
+        <br><p>2017 and 2019 had the peak for Disney+ Hotstar in India, as India was transitioning to a digital world, with the power of these streaming platforms getting recognised by the public.</p>
+
+        <p>Holiday seasons — December, January, and July seem to be the best time for the release of new content on Disney+ Hotstar. Disney+ Hotstar acknowledges its customers’ time-spending habits, that they tend to have more time off during those periods of the year. And that is a great time to reel people in! Also noted that Disney+ Hotstar adds more new Movies during the second half of the year, from June to December.</p>
+    
+        <h6>4. Disney+ Hotstar Age Rate</h6>
+
+        <p>So far, I have explored that Disney+ Hotstar prefers Movies to TV Shows, consistently over years. Now let’s explore the distribution of Disney+ Hotstar's content by the Age Group of its customers.</p>
+    
+        <p>For this, I built a 'squarify' graph that represents the different age groups that had the access to Disney+ Hotstar.</p>
+
+        <div class="image-container">
+            <img src="/static/images/squarify.png" class="image" alt="Age">
+        </div>
+
+        <br><p>Majority of the users belong to 13+, and 16+ ages, which means that the younger generation of India favours streaming platforms like this.</p>
+
+        <h6>5. Top Genres of Disney+ Hotstar</h6>
+
+        <p>Disney+ Hotstar services with different genres. They include: </p>
+
+        <div class="image-container">
+            <img src="/static/images/genres.png" class="image" alt="Genres">
+        </div>
+
+       <br> <p>We can see that 'Drama' has the most content, followed by other genres. This contradicts the point where I have initially mentioned that, Disney+ Hotstar started off with sports, but as different type of content increases, the reason why it started dropped eventually.</p>
+
+       <p>I could see 2 main reasons for this:</p>
+       <p>1. More than sports, the audience loved watching dramas, romance, thrillers and other common types of genres;</p>
+
+       <p>2. Not all kinds of sports was famous in India. Only well-known sports like Cricket, Tennis were famous, which means the conten was seasonal.</p>
+
+       <h6>6. Movie and TV Show Duration</h6>
+
+       <div class="image-container">
+        <img src="/static/images/movierun.png" class="image" alt="RunningTime">
+        </div>
+
+        <br><p>So, a good amount of movies on Disney+ Hotstar have a duration of 75–120 mins. It is acceptable considering the fact that a fair amount of the audience cannot watch a 3-hour movie in one sitting. Additionally, Hotstar is adding more single-season TV shows than series that have 2 seasons or more.</p>
+
+    
+        <h6>7. Disney+ Hotstar Descriptions</h6>
+
+        <div class="image-container">
+            <img src="/static/images/cloud.png" class="image" alt="cloud">
+            </div>
+
+       
+        <br> <p>This is the word cloud for the description of Netflix movies and series. Friend, Life, Love, Will, Family” are the most popular words.</p>
+        
+        <h6>Result</h6>
+
+        <p>I pushed this analysis as a web application that was designed using React. Although I didn't win the competition, my team took the 5th place amongst the 10 finalists. </p>
+        
+        <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 

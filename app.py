@@ -193,6 +193,10 @@ def project1():
 def project2():
     return render_template('cryptoprediction.html')
 
+@app.route('/disneyhotstarEDA')
+def project3():
+    return render_template('disneyhotstarEDA.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
     
