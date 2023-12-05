@@ -182,6 +182,10 @@ def eighteenthday():
 def nineteenthday():
     return render_template('20blog.html')
 
+@app.route('/21thblog')
+def twenthiethday():
+    return render_template('21blog.html')
+
 
 
 #direction to projects
