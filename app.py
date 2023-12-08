@@ -186,7 +186,9 @@ def nineteenthday():
 def twenthiethday():
     return render_template('21blog.html')
 
-
+@app.route('/22thblog')
+def twienthiethone():
+    return render_template('22blog.html')
 
 #direction to projects
 @app.route('/brainstrokeprediction')
