@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+{% block content %}
+    <h1>{% block title %} Welcome to the Data Whisperer {% endblock %}</h1>
+
+    <body>
+
+        <blockquote class="blockquote blockquote--bordered">
+            <p class="blockquote_text">
+                "When you have a dream, you've got to grab it and never let go."
+            <p class="blockquote_text blockquote_text_author">
+                Carol Burnett
+            </p>
+        </blockquote>
+
+       <p>Creating a Tableau dashboard involves designing an interactive and visually appealing platform to showcase data insights.</p>
+
+       <p>It is not as easy as it sounds. I was just working with a House data inspired from a YouTube video. I took approximately 2 hours to analyze the data and visualize them and I did come across a few challenges that I wanted to address and ways to overcome them.</p>
+
+       <h4>1. Data Quality and Preparation:</h4>
+
+       <p>Poor data quality, missing values, or inconsistent data can hinder accurate visualizations. Cleaning and checking the data for missing values before importing the file in Tableau is the right way to proceed. It is however time-consuming.</p>
+    
+        <h4>2. Data Complexity:</h4>
+
+        <p>Sometimes, large datasets can contain complex schemas. To deal with this, make sure that the data is broken down into manageable segments. Using data blending or joining techniques(aggregation) to combine multiple sources can be actionable.</p>
+    
+        <h4>3. Design and Layout:</h4>
+    
+    
+        <p>A lot of people don’t give this factor importance. Crowded dashboards/ not chronologically organized dashboards can hinder extracting insights, leading to poor decision-making.</p>
+    
+        <p>Thus, planning your dashboard layout ahead of time is a better way to highlight the visualizations. For example, use a grid system for consistency and follow design principles for color, font, and whitespace. Tableau’s dashboard layout containers can help structure content. I believe balancing aesthetics with the need to convey information clearly requires design skills. This way, anyone can understand the data better.</p>
+    
+    
+        <h4>4. Choosing the Right Visualizations:</h4>
+
+        <p>People say that as a Data Analyst, one should be responsible for narrating a story. Hence, without the right charts/graphs for the type of analysis, there won’t be any meaningful thoughts. A chart can be chosen based on the data’s objective, dimensions, and key variables. Some common types include:</p>
+    
+        <li>Bar Charts: For comparing categories.</li>
+        <li>Line Charts: For showing trends over time.</li>
+        <li>Scatter Plots: For exploring relationships between variables.</li>
+        <li>Pie Charts: For showing proportions of a whole.</li>
+        <li>Histograms: For visualizing distributions.</li>
+        <li>Heatmaps: For displaying correlations and patterns.</li>
+        <li>Maps: For geographical data.</li>
+        <li>Box Plots: For showing distribution and outliers.</li>
+        <li>Area Charts: For cumulative totals.</li>
+
+        <br>
+        <p>Make sure the type of chart you choose aligns with what analysis you want to do with that respective data. For example, in order to visualize the sales performance of different product categories over the past year to identify trends and opportunities for growth for an e-commerce company, you need to make sure that you are choosing a line chart as you are analyzing the trends of variables over time.</p>
+    
+    
+        <h4>5. User Experience</h4>
+
+        <p>We need to make sure that we are visualizing the data for the appropriate end-users. Designing a user-friendly experience that guides users to insights rather than overwhelming them with data requires thoughtful planning. Creating clear navigation paths, providing tooltips, and using calculated fields for contextual explanations are some of the possible ways to target your audience. Also, Conduct user testing to gather feedback and perform changes simultaneously.</p>
+    
+        <p>This also includes building the dashboards with responsive layouts that adapt to different screen sizes.</p>
+    
+        <h4>6. Business Concept</h4>
+    
+    
+        <p>Understanding the specific business context and objectives to create a dashboard that addresses relevant questions and challenges. In order to achieve this, collaborating closely with business stakeholders to understand their needs and objectives is the best method to go by. Align the dashboard with the specific questions and challenges they face which will enhance the decision-making process.</p>
+    
+    
+        <h4>7. Performance Optimization</h4>
+
+        <p>Large datasets or complex calculations can impact dashboard performance. Ensuring that your dashboard loads quickly and responds to interactions smoothly is crucial.</p>
+    
+        <p>The ideal way to overcome this challenge is by optimizing data sources, aggregations, and calculations that are used in the worksheets. Use Tableau’s performance recording to identify bottlenecks and utilize data extracts or Tableau’s Hyper format for faster loading.</p>
+    
+    
+        <h4>8. User Adoption</h4>
+
+        <p>I believe no one really talks about this. Providing the user with training materials, tutorials, and guides to navigate and interpret the dashboard is a user-friendly way and can also increase user satisfaction. This way, the transparency scale between the stakeholders, users, and analysts is maintained.</p>
+    
+        <p>By applying these strategies and learning from your experiences, you can overcome the challenges associated with creating a Tableau dashboard and create a powerful, insightful, and user-friendly data visualization tool.</p>
+    
+    
+        <p>Below is a recent Dashboard that I did:</p>
+    
+        <div class="image-container">
+            <img src="/static/images/house_dashbaord.png" class="image" alt="House Sale Dashboard">
+        </div>
+
+        <p>Link to my Public Tableau: <a href="https://public.tableau.com/app/profile/vijay.varshini.lakshmi.narayanan/vizzes">Click Here</a></p>
+    
+        <p>Link to the Dataset: <a href=" https://github.com/vijaayyyyvarshini/Tableau-Data.git">Dataset</a> </p>
+    
+       
+    
+    
+    
+    
+    
+    
+       <footer>
+        <p>Copyright © 2023 Data Whisperer</p>
+      </footer>
+
+    </body>
+
+{% endblock %} 
